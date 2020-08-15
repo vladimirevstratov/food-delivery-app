@@ -1,90 +1,93 @@
-import { StyleSheet } from 'react-native'
-import { ApplicationStyles, Metrics, Colors } from '../../Themes/'
+import {StyleSheet} from 'react-native';
+import {ApplicationStyles, Metrics, Colors} from '../../Themes/';
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
   container: {
     flex: 1,
-    backgroundColor: Colors.background
+    backgroundColor: Colors.background,
   },
   loadingview: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: Metrics.screenHeight/1.5
+    height: Metrics.screenHeight / 1.5,
   },
   content: {
     flex: 1,
     paddingLeft: 15,
-    paddingRight: 15
+    paddingRight: 15,
   },
   //Tabs
-  tabs: { //фон вкладки
-    backgroundColor: Colors.blue0
+  tabs: {
+    //фон вкладки
+    backgroundColor: Colors.blue0,
   },
   underlinestyle: {
-    backgroundColor: Colors.background
+    backgroundColor: Colors.background,
   },
-  texttab: { //текст вкладки
-    color: Colors.text0
-  },
-  activetab: { //фон активной вкладки
-    backgroundColor: Colors.blue1
-  },
-  activetexttab: { //текст активной вкладки
+  texttab: {
+    //текст вкладки
     color: Colors.text0,
-    fontWeight: 'normal'
+  },
+  activetab: {
+    //фон активной вкладки
+    backgroundColor: Colors.blue1,
+  },
+  activetexttab: {
+    //текст активной вкладки
+    color: Colors.text0,
+    fontWeight: 'normal',
   },
   //Tabs
   logoimg: {
     padding: 30,
     height: 150,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   logo: {
     height: 100,
     resizeMode: 'contain',
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
   abouttext: {
     paddingTop: 5,
     alignSelf: 'center',
-    fontSize: 18
+    fontSize: 18,
   },
   contact: {
-    paddingTop: 10
+    paddingTop: 10,
   },
   contactitem: {
-    paddingTop: 5
+    paddingTop: 5,
   },
   contacticonblock: {
-    width: 35
+    width: 35,
   },
   aboutdesc: {
     flex: 1,
-    paddingTop: 10
+    paddingTop: 10,
   },
   aboutdescrow: {
     flexDirection: 'row',
-    paddingTop: 10
+    paddingTop: 10,
   },
   aboutdesctext: {
     paddingLeft: 15,
-    paddingRight: 20
+    paddingRight: 20,
   },
   social: {
     flexDirection: 'row',
     justifyContent: 'center',
     paddingTop: 20,
-
   },
   vk: {
     width: 40,
     height: 40,
-    paddingRight: 10
+    paddingRight: 10,
   },
   instagram: {
     width: 40,
-    height: 40
+    height: 40,
   },
   //Maps
   mapcontainer: {
@@ -113,8 +116,8 @@ export default StyleSheet.create({
   },
   maptext: {
     color: Colors.text0,
-    alignSelf: 'center'
-  }
+    alignSelf: 'center',
+  },
   //Maps
   /*listitem0: { //элемент списка
     flex: 1,
@@ -226,4 +229,4 @@ export default StyleSheet.create({
   }
   //ENDING row action StyleSheet
   */
-})
+});

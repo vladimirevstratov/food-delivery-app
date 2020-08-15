@@ -1,13 +1,13 @@
-import { StyleSheet } from 'react-native'
-import { ApplicationStyles, Metrics, Colors } from '../../Themes/'
+import {StyleSheet} from 'react-native';
+import {ApplicationStyles, Metrics, Colors} from '../../Themes/';
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
   content: {
-    backgroundColor: Colors.background
+    backgroundColor: Colors.background,
   },
   cartitems: {
-    width: 150
+    width: 150,
   },
   freesaucerow: {
     height: 45,
@@ -15,35 +15,35 @@ export default StyleSheet.create({
     borderTopColor: Colors.grey3,
     borderTopWidth: 1,
     borderBottomColor: Colors.grey3,
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
   },
   freesaucetext: {
     fontSize: 20,
-    color: Colors.black1
+    color: Colors.black1,
   },
   button0: {
     backgroundColor: Colors.blue0,
     width: 125,
     height: 33,
     borderRadius: 8,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   buttontext0: {
     fontSize: 19,
     color: Colors.text0,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   button1: {
     borderColor: Colors.blue2,
     width: 115,
     height: 33,
     borderRadius: 8,
-    height: 44
+    height: 44,
   },
   buttontext1: {
     fontSize: 13,
     color: Colors.blue2,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   checkoutsummary: {
     backgroundColor: Colors.blue1,
@@ -53,27 +53,27 @@ export default StyleSheet.create({
     paddingBottom: 13,
   },
   summarycol1: {
-    width: Metrics.screenWidth/2
+    width: Metrics.screenWidth / 2,
   },
   summarycol2: {
-    width: Metrics.screenWidth/2
+    width: Metrics.screenWidth / 2,
   },
   summarycol1text0: {
     paddingLeft: 17,
     color: Colors.text0,
-    fontSize: 24
+    fontSize: 24,
   },
   summarycol1text1: {
     paddingLeft: 17,
     color: Colors.text0,
-    fontSize: 13
+    fontSize: 13,
   },
   summarycol2text0: {
     justifyContent: 'flex-end',
     textAlign: 'right',
     paddingRight: 23,
     color: Colors.text0,
-    fontSize: 25
+    fontSize: 25,
   },
   summarycol2text1: {
     justifyContent: 'flex-end',
@@ -81,11 +81,11 @@ export default StyleSheet.create({
     paddingRight: 23,
     textDecorationLine: 'line-through',
     color: Colors.text0,
-    fontSize: 13
+    fontSize: 13,
   },
   buttoncheckout: {
     backgroundColor: Colors.pink0,
-    height: 59
+    height: 59,
   },
   //STARTING row action StyleSheet
   rowContent: {
@@ -94,40 +94,41 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     borderBottomWidth: 1,
-    borderColor: '#eeeeee'
+    borderColor: '#eeeeee',
   },
-  listitem0left: { //миниатюра и название элемента
+  listitem0left: {
+    //миниатюра и название элемента
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   rowIcon: {
     width: 50,
     height: 50,
     borderRadius: 25,
-    margin: 20
+    margin: 20,
   },
   rowTitle: {
     fontWeight: 'bold',
     fontSize: 20,
-    width: 120
+    width: 120,
   },
   rowSubtitle: {
     fontSize: 18,
-    color: 'gray'
+    color: 'gray',
   },
   rowButton: {
-    paddingRight: 15
+    paddingRight: 15,
   },
   button: {
     width: 75,
-    height: "100%",
-    justifyContent: "center",
-    alignItems: "center"
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   buttonImage: {
     width: 40,
-    height: 40
+    height: 40,
   },
   playground: {
     marginTop: Metrics.screenHeight <= 500 ? 0 : 80,
@@ -135,22 +136,23 @@ export default StyleSheet.create({
     width: Metrics.screenWidth - 40,
     backgroundColor: '#5894f3',
     alignItems: 'stretch',
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
   playgroundLabel: {
     color: 'white',
     fontSize: 14,
     fontWeight: 'bold',
-    marginBottom: 15
+    marginBottom: 15,
   },
   slider: {
-    height: 40
+    height: 40,
   },
   //ENDING row action StyleSheet
-  footer: { //блок продолжить в футере
+  footer: {
+    //блок продолжить в футере
     height: 140,
     paddingBottom: 0,
-    flexDirection: 'column'
+    flexDirection: 'column',
     //backgroundColor: Colors.pink0
   },
   //ПУСТАЯ КОРЗИНА
@@ -158,22 +160,22 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 40
+    paddingTop: 40,
   },
   textemptycart: {
-    fontSize: Metrics.listtext
+    fontSize: Metrics.listtext,
   },
   buttontextemptycart: {
-    fontSize: Metrics.listtext
+    fontSize: Metrics.listtext,
   },
   blockbuttontomenu: {
     justifyContent: 'center',
-    paddingTop: 15
+    paddingTop: 15,
   },
   buttontomenu: {
     backgroundColor: Colors.blue0,
     width: 140,
     borderRadius: 8,
-    justifyContent: 'center'
-  }
-})
+    justifyContent: 'center',
+  },
+});

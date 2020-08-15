@@ -37,6 +37,6 @@ const colors = {
   blue1: '#58AEB8', //светло голубой цвет
   blue2: '#36A0A9', //оттенок голубого цвета
   pink0: '#CB124D', //основной розовый цвет
-}
+};
 
-export default colors
+export default colors;
