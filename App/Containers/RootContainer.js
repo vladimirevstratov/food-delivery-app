@@ -12,7 +12,7 @@ import {Root} from 'native-base';
 // Styles
 import styles from './Styles/RootContainerStyles';
 
-registerKilledListener();
+//registerKilledListener();
 
 class RootContainer extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class RootContainer extends Component {
     if (Platform.OS === 'android') {
       SplashScreen.hide();
     }
-    registerAppListener(this.props.navigation);
+    //registerAppListener(this.props.navigation);
   }
 
   render() {
