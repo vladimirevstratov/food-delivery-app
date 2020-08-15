@@ -1,7 +1,7 @@
 import {createReducer, createActions} from 'reduxsauce';
 import Immutable from 'seamless-immutable';
-import {filter} from 'ramda';
-import {startsWith} from 'ramdasauce';
+//import {filter} from 'ramda';
+//import {startsWith} from 'ramdasauce';
 
 const LIST_DATA = [
   'sausage',
@@ -127,8 +127,9 @@ export const INITIAL_STATE = Immutable({
 /* ------------- Reducers ------------- */
 
 export const performSearch = (state, {searchTerm}) => {
-  const results = filter(startsWith(searchTerm), LIST_DATA);
-  return state.merge({searching: true, searchTerm, results});
+  //const results = filter(startsWith(searchTerm), LIST_DATA);
+  //return state.merge({searching: true, searchTerm, results});
+  return state;
 };
 
 export const cancelSearch = (state) => INITIAL_STATE;

@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
-import Config from '../Config/AppConfig';
+//import Config from '../Config/AppConfig';
 import Actions from '../Actions/Creators';
 import SwipeRowCart from '../Components/SwipeRowCart';
 import CartTotal from '../Components/CartTotal';

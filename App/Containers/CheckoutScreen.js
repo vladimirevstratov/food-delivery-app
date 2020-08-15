@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Actions from '../Actions/Creators';
-import Config from '../Config/AppConfig';
+//import Config from '../Config/AppConfig';
 import firebase from 'react-native-firebase';
 import {
   Image,
@@ -270,7 +270,7 @@ class CheckoutScreen extends React.Component {
                 {
                   to: [
                     {
-                      email: Config.sendToEmail,
+                      email: /*Config.sendToEmail*/'email',
                     },
                   ],
                   subject:
