@@ -1,7 +1,8 @@
 import { Platform, AsyncStorage, AppState } from 'react-native';
 
-import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType, NotificationActionType, NotificationActionOption, NotificationCategoryOption} from "react-native-fcm";
+//import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType, NotificationActionType, NotificationActionOption, NotificationCategoryOption} from "react-native-fcm";
 
+/*
 AsyncStorage.getItem('lastNotification').then(data=>{
   if(data){
     // if notification arrives when app is killed, it should still be logged here
@@ -125,3 +126,4 @@ FCM.setNotificationCategories([
     options: [NotificationCategoryOption.CustomDismissAction, NotificationCategoryOption.PreviewsShowTitle]
   }
 ])
+*/

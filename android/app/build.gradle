@@ -94,13 +94,13 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         applicationId "com.burgerroom"
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 28
         versionCode 6
         versionName "1.6"
         ndk {
@@ -150,25 +150,24 @@ android {
 
 dependencies {
     compile project(':react-native-splash-screen')
+
+    //implementation "androidx.annotation:annotation:1.1.0"
     compile(project(':react-native-maps')){
         exclude group: 'com.google.android.gms'
     }
     compile "com.google.android.gms:play-services-maps:11.8.0"
     compile project(':react-native-vector-icons')
-    compile project(':react-native-interactable')
     compile(project(':react-native-firebase')) {
         transitive = false
     }
     compile fileTree(dir: "libs", include: ["*.jar"])
-    compile "com.android.support:appcompat-v7:23.0.1"
+
+    implementation "androidx.appcompat:appcompat:1.1.0"
+    //compile "com.android.support:appcompat-v7:23.0.1"
     compile "com.facebook.react:react-native:+"  // From node_modules
 
     // Firebase dependencies
     compile "com.google.firebase:firebase-database:11.8.0"
-
-    compile (project(':react-native-fcm')){
-        exclude group: "com.google.firebase"
-    }
 
     compile ("com.google.android.gms:play-services-base:11.8.0") {
         force = true;
@@ -186,6 +185,7 @@ dependencies {
         force = true;
     }
 
+    implementation project(path: ':react-native-interactable')
 
 }
 

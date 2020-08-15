@@ -7,9 +7,7 @@ import ReduxPersist from '../Config/ReduxPersist'
 import SplashScreen from 'react-native-splash-screen'
 import { Root } from "native-base";
 
-import FCM from "react-native-fcm";
-
-import {registerKilledListener, registerAppListener} from "../Services/Listeners";
+//import {registerKilledListener, registerAppListener} from "../Services/Listeners";
 
 // Styles
 import styles from './Styles/RootContainerStyles'
@@ -31,39 +29,10 @@ class RootContainer extends Component {
     if (!ReduxPersist.active) {
       this.props.startup()
     }
-    if(Platform.OS === 'android'){ 
+    if(Platform.OS === 'android'){
       SplashScreen.hide();
     }
     registerAppListener(this.props.navigation);
-    FCM.getInitialNotification().then(notif => {
-      this.setState({
-        initNotif: notif
-      })
-      /*if(notif.targetScreen === 'detail'){ Переход при нажатии на push уведомление
-        setTimeout(()=>{
-          this.props.navigation.navigate('Detail')
-        }, 500)
-      }*/
-    });
-
-    try{
-      let result = await FCM.requestPermissions({badge: false, sound: true, alert: true});
-    } catch(e){
-      console.error(e);
-    }
-
-    FCM.getFCMToken().then(token => {
-      console.log("TOKEN (getFCMToken)", token);
-      this.setState({token: token || ""});
-      FCM.subscribeToTopic('/topics/news');
-    });
-
-    if(Platform.OS === 'ios'){
-      FCM.getAPNSToken().then(token => {
-        console.log("APNS TOKEN (getFCMToken)", token);
-        FCM.subscribeToTopic('/topics/news');
-      });
-    }
   }
 
   render () {

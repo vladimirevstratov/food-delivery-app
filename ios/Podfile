@@ -35,6 +35,8 @@ target 'burgerroom' do
   pod 'react-native-google-maps', path: rn_maps_path  # Remove this line if you don't want to support Google Maps on iOS
 
 
+  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+
   target 'burgerroomTests' do
     inherit! :search_paths
     # Pods for testing
