@@ -1,5 +1,5 @@
 import React from 'react';
-import firebase from 'react-native-firebase';
+import firebase from '@react-native-firebase/database';
 import {connect} from 'react-redux';
 import {
   Image,

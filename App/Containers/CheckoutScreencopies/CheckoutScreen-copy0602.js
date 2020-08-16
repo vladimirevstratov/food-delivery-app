@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Actions from '../Actions/Creators';
-import firebase from 'react-native-firebase';
+import firebase from '@react-native-firebase/database';
 import {
   Image,
   BackHandler,
@@ -135,9 +135,8 @@ class CheckoutScreen extends React.Component {
       function addOrderData(indexData) {
         //Записываем в базу
         return new Promise((resolve, reject) => {
-          var newRef = firebase.database().ref('orders/Заказы/').push().key;
-          firebase
-            .database()
+          var newRef = firebase().ref('orders/Заказы/').push().key;
+          firebase()
             .ref('orders/Заказы/' + '-order' + newRef)
             .set(indexData)
             .then(function () {

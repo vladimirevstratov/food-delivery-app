@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Actions from '../Actions/Creators';
 //import Config from '../Config/AppConfig';
-import firebase from 'react-native-firebase';
+import firebase from '@react-native-firebase/database';
 import {
   Image,
   BackHandler,
@@ -187,7 +187,7 @@ class CheckoutScreen extends React.Component {
       addOrderData = () => {
         //Записываем в базу
         return new Promise((resolve, reject) => {
-          var newRef = firebase.database().ref('Заказы').push().key;
+          var newRef = firebase().ref('Заказы').push().key;
           var dateandtime = new Date();
           var productsarray = [];
           var products = this.state.products;
@@ -214,8 +214,7 @@ class CheckoutScreen extends React.Component {
             итог: this.props.navigation.state.params.total,
             скидка: this.props.navigation.state.params.skidka,
           };
-          firebase
-            .database()
+          firebase()
             .ref('Заказы/' + 'order' + newRef)
             .set(data)
             .then(() => {

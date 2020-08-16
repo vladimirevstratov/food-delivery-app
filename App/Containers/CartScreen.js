@@ -265,15 +265,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartScreen);
-
-//Алерт о пустой корзине
-/*
-Alert.alert(
-	'Ваша корзина пуста!',
-	'Выберите любимые блюда из меню и возвращайтесь в корзину.',
-	[
-		{text: 'В меню', onPress: () => this.props.navigation.navigate("NavigationDrawer")},
-	],
-	{ cancelable: false }
-)
-*/

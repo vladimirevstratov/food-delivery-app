@@ -35,7 +35,7 @@ import {
 import CartIconHeader from '../Components/CartIconHeader';
 import styles from './Styles/ContactScreenStyles';
 import {Images, Colors} from '../Themes/';
-import firebase from 'react-native-firebase';
+import firebase from '@react-native-firebase/database';
 
 class CategoryScreen extends Component {
   constructor(props) {
@@ -49,7 +49,7 @@ class CategoryScreen extends Component {
       markerdescription: 'Самые мощные бургеры в Бийске! Трофимова, 4А',
       loading: true,
     };
-    this.ref = firebase.database().ref('Настройки/Контакты');
+    this.ref = firebase().ref('Настройки/Контакты');
   }
 
   componentDidMount() {
@@ -278,8 +278,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(CategoryScreen);
-
-/*
-Название категории
-{this.props.navigation.state.params.name.toUpperCase()}
-*/

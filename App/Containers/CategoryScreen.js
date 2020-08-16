@@ -8,7 +8,6 @@ import {
   BackHandler,
   TouchableWithoutFeedback,
 } from 'react-native';
-//import { SearchBar } from "react-native-elements";
 import {
   Container,
   Header,
@@ -18,32 +17,25 @@ import {
   Left,
   Right,
   Body,
-  Badge,
-  List,
   ListItem,
   Thumbnail,
   Text,
   Toast,
 } from 'native-base';
 import CartIconHeader from '../Components/CartIconHeader';
-import {NavigationActions} from 'react-navigation';
 import styles from './Styles/CategoryScreenStyles';
 import {Colors} from '../Themes/';
-import firebase from 'react-native-firebase';
+import firebase from '@react-native-firebase/database';
 
 class CategoryScreen extends Component {
   constructor(props) {
     super(props);
-    this.menuref = firebase.database().ref('Меню');
+    this.menuref = firebase().ref('Меню');
     this.ref = this.menuref.orderByChild('id');
-    this.setref = firebase.database().ref('Настройки/Общие');
+    this.setref = firebase().ref('Настройки/Общие');
     this.state = {
       loading: true,
       items: [],
-      //page: 1,
-      //seed: 1,
-      //error: null,
-      //refreshing: false
     };
   }
 
@@ -139,99 +131,6 @@ class CategoryScreen extends Component {
     this.props.addSettings(setingsapp.скидка);
   };
 
-  //
-  //Firestore база данных
-  /* constructor(props) {
-    super(props);
-    this.menuref = firebase.firestore().collection('меню/AEqnmj4Lcib50eJ9HYh7/товары');
-		this.ref = this.menuref.orderBy('id');
-    this.state = {
-      loading: true,
-      items: []
-      //page: 1,
-      //seed: 1,
-      //error: null,
-      //refreshing: false
-    };
-    //console.log(this.state.items);
-
- }
-
-  componentDidMount() {
-		BackHandler.addEventListener("hardwareBackPress", () => {
-			this.props.navigation.goBack();
-			return false;
-		});
-    this.unsubscribe = this.ref.onSnapshot(this.listenForItems);
-
-    //firebase.messaging().requestPermissions();
-    firebase.messaging().getToken()
-      .then((token) => {
-        console.log('Device FCM Token: ', token);
-        firebase.messaging().subscribeToTopic('/topics/news'); //Подписываемся на топик Firebase Cloud Messaging
-      })
-      .catch( (err) => console.log(err));
-  }
-
-  componentWillMount() {
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe();
-	}
-
-  listenForItems = (querySnapshot) => {
-  	const items = [];
-
-	  querySnapshot.forEach((doc) => {
-        const item = doc.data();
-
-				items.push({
-		      name: item.название,
-          measure: item.измерение,
-          price: item.цена,
-          weight: item.вес,
-          photo: item.фото,
-          desc: item.описание,
-          id: item.id
-			  });
-
-		});
-
-	  console.log({items});
-			  this.setState({
-			    items,
-			    loading: false,
-				});
-
-  }*/
-  //
-  //Firestore база данных
-  //
-  /*handleRefresh = () => {
-    this.setState(
-      {
-        page: 1,
-        seed: this.state.seed + 1,
-        refreshing: true
-      },
-      () => {
-        this.makeRemoteRequest();
-      }
-    );
-  };
-
-  handleLoadMore = () => {
-    this.setState(
-      {
-        page: this.state.page + 1
-      },
-      () => {
-        this.makeRemoteRequest();
-      }
-    );
-  }; */
-
   renderSeparator = () => {
     return (
       <View
@@ -265,12 +164,7 @@ class CategoryScreen extends Component {
       photo: item.photo,
       price: item.price,
     };
-    //console.log(this.props);
-    //console.log(newItem);
-    /*Alert.alert(
-      I18n.t('addedInCart'),
-      this.props.productName+", "+this.props.data.price_name+" "+I18n.t('productAdded'),
-    )*/
+
     this.props.addCart(newItem);
   }
 
@@ -369,15 +263,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CategoryScreen);
-
-/*
-Название категории
-{this.props.navigation.state.params.name.toUpperCase()}
-*/
-
-/*
-Кнопка назад в header
-<Button transparent onPress={() => this.props.navigation.goBack()}>
-  <Icon name="md-arrow-back" style={{ color: '#34909F' }}/>
-</Button>
-*/
