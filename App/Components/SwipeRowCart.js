@@ -18,11 +18,10 @@ export default class SwipeRowCart extends React.Component {
   constructor(props) {
     super(props);
     this._deltaX = new Animated.Value(0);
+    this._deltaY = new Animated.Value(0);
     this.state = {
       isMoving: false,
       position: 1,
-      //timer: 3500,
-      //await: false
     };
   }
 
@@ -187,7 +186,8 @@ export default class SwipeRowCart extends React.Component {
           onStop={this.onStopMoving.bind(this)}
           onRowPress={this.onRowPress.bind(this)}
           dragToss={0.01}
-          animatedValueX={this._deltaX}>
+          animatedValueX={this._deltaX}
+          animatedValueY={this._deltaY}>
           <TouchableHighlight
             onPress={this.onRowPress.bind(this)}
             activeOpacity={activeOpacity}
@@ -203,6 +203,7 @@ export default class SwipeRowCart extends React.Component {
   }
 
   onSnap({nativeEvent}) {
+    console.log('>>>Свайпится');
     const {index} = nativeEvent;
     this.setState({position: index});
   }
