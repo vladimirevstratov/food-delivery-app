@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
-import { ApplicationStyles, Metrics, Colors } from '../../Themes/'
+import {StyleSheet} from 'react-native';
+import {ApplicationStyles, Metrics} from '../../Themes/';
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
@@ -10,38 +10,38 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     borderBottomWidth: 1,
-    borderColor: '#eeeeee'
+    borderColor: '#eeeeee',
   },
   rowIcon: {
     width: 50,
     height: 50,
     borderRadius: 25,
     backgroundColor: '#73d4e3',
-    margin: 20
+    margin: 20,
   },
   rowTitle: {
     fontWeight: 'bold',
-    fontSize: 20
+    fontSize: 20,
   },
   rowSubtitle: {
     fontSize: 18,
-    color: 'gray'
+    color: 'gray',
   },
   button: {
     width: 50,
-    height: "100%",
-    justifyContent: "center",
-    alignItems: "center"
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   buttonIcon: {
     width: 40,
     height: 40,
     color: '#ffffff',
-    fontSize: 40
+    fontSize: 40,
   },
   buttonQty: {
     color: '#ffffff',
-    fontSize: 35
+    fontSize: 35,
   },
   playground: {
     marginTop: Metrics.screenHeight <= 500 ? 0 : 80,
@@ -49,16 +49,15 @@ export default StyleSheet.create({
     width: Metrics.screenWidth - 40,
     backgroundColor: '#5894f3',
     alignItems: 'stretch',
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
   playgroundLabel: {
     color: 'white',
     fontSize: 14,
     fontWeight: 'bold',
-    marginBottom: 15
+    marginBottom: 15,
   },
   slider: {
-    height: 40
-  }
-  //ENDING row action StyleSheet
-})
+    height: 40,
+  },
+});

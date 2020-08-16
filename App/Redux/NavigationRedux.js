@@ -1,4 +1,4 @@
-import AppNavigation from '../Navigation/AppNavigation'
+import AppNavigation from '../Navigation/AppNavigation';
 
 /*export const reducer = (state, action) => {
   const newState = AppNavigation.router.getStateForAction(action, state)
@@ -7,14 +7,16 @@ import AppNavigation from '../Navigation/AppNavigation'
 
 const getCurrentRouteName = (state) => {
   const route = state.routes[state.index];
-  return typeof route.index === 'undefined' ? route.routeName : getCurrentRouteName(route);
-}
+  return typeof route.index === 'undefined'
+    ? route.routeName
+    : getCurrentRouteName(route);
+};
 
 export const reducer = (state, action) => {
   const nextState = AppNavigation.router.getStateForAction(action, state);
 
   // prevents navigating twice to the same route
- if (state && nextState) {
+  if (state && nextState) {
     const stateRouteName = getCurrentRouteName(state);
     const nextStateRouteName = getCurrentRouteName(nextState);
     return stateRouteName === nextStateRouteName ? state : nextState;

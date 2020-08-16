@@ -1,35 +1,28 @@
-import React from "react";
-import { DrawerNavigator } from "react-navigation";
-//import CategoriesListScreen from "../Containers/CategoriesListScreen";
-import CategoryScreen from "../Containers/CategoryScreen";
-import CartScreen from "../Containers/CartScreen";
-import ContactScreen from "../Containers/ContactScreen";
-import DrawerContent from "../Containers/DrawerContent";
-import { Icon } from "native-base";
+import React from 'react';
+import {DrawerNavigator} from 'react-navigation';
+import CategoryScreen from '../Containers/CategoryScreen';
+import CartScreen from '../Containers/CartScreen';
+import ContactScreen from '../Containers/ContactScreen';
+import DrawerContent from '../Containers/DrawerContent';
 
-
-
-
-import styles from "./Styles/NavigationStyles";
-
-const NavigationDrawer = DrawerNavigator({
-		//Меню: { screen: CategoriesListScreen },
-		Меню: {
-			screen: CategoryScreen,
-			/*navigationOptions: {
+const NavigationDrawer = DrawerNavigator(
+  {
+    //Меню: { screen: CategoriesListScreen },
+    Меню: {
+      screen: (props) => <CategoryScreen {...props} />,
+      /*navigationOptions: {
         drawerIcon: () => <Icon name="md-cart" color="#cccccc"/>,
       }*/
-		},
-		Корзина: { screen: CartScreen },
-		Контакты: { screen: ContactScreen },
+    },
+    Корзина: {screen: (props) => <CartScreen {...props} />},
+    Контакты: {screen: (props) => <ContactScreen {...props} />},
     /*Рестораны: { screen: CartScreen },
 		Акции: { screen: CartScreen },*/
-	},
-	{
-		initialRouteName: "Меню",
-		contentComponent: props => <DrawerContent {...props} />,
-    //drawerWidth: 250,
-	}
+  },
+  {
+    initialRouteName: 'Меню',
+    contentComponent: (props) => <DrawerContent {...props} />,
+  },
 );
 
 export default NavigationDrawer;
