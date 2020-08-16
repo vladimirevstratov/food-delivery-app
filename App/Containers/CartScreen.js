@@ -87,10 +87,6 @@ class CartScreen extends React.Component {
     this.props.updateCart(index, qty);
   };
 
-  /*onPressSnapTo = () => {
-    this.child.onRowPress();
-  }*/
-
   navigatetoMenu() {
     const resetAction = NavigationActions.reset({
       index: 0,
@@ -190,14 +186,7 @@ class CartScreen extends React.Component {
                   </View>
                 </SwipeRowCart>
               )}
-              //ItemSeparatorComponent={this.renderSeparator}
-              //ListHeaderComponent={this.renderHeader}
-              //ListFooterComponent={this.renderFooter}
               keyExtractor={(item, index) => index.toString()}
-              //onRefresh={this.handleRefresh}
-              //refreshing={this.state.refreshing}
-              //onEndReached={this.handleLoadMore}
-              //onEndReachedThreshold={50}
             />
           </Content>
         )}
@@ -228,27 +217,6 @@ class CartScreen extends React.Component {
     );
   }
 }
-
-//РЕНДЕР БЕСПЛАТНЫХ ПРИПРАВ (из части render)
-/*	<Separator bordered style={styles.freesaucerow}>
-	<Text style={styles.freesaucetext}>БЕСПЛАТНЫЕ ПРИПРАВЫ</Text>
-	</Separator>
-	<List dataArray={items1}
-		renderRow={(item) =>
-			<ListItem>
-				<Thumbnail circle size={51} source={require('../Images/sushi.png')} />
-				<Body>
-					<Text style={styles.cartitems}>{item}</Text>
-				</Body>
-				<Right>
-					<Button bordered style={styles.button1}>
-						<Text style={styles.buttontext1}>+ платная порция</Text>
-					</Button>
-				</Right>
-			</ListItem>
-		}>
-	</List> */
-//
 
 const mapStateToProps = (state) => {
   return {

@@ -1,32 +1,11 @@
 import React, {PropTypes} from 'react';
 import {
-  Image,
-  BackHandler,
   View,
-  FlatList,
   Animated,
   TouchableOpacity,
   TouchableHighlight,
-  Alert,
-  Slider,
-  Dimensions,
 } from 'react-native';
-import {
-  Container,
-  Header,
-  Content,
-  List,
-  ListItem,
-  Text,
-  Left,
-  Right,
-  Body,
-  Button,
-  Icon,
-  Title,
-  Separator,
-  Thumbnail,
-} from 'native-base';
+import {Text, Icon} from 'native-base';
 // Styles
 import styles from './Styles/SwipeRowStyles';
 import Interactable from 'react-native-interactable';
@@ -47,41 +26,6 @@ export default class SwipeRowCart extends React.Component {
     };
   }
 
-  /*componentDidMount() {
-    this.props.onRef(this)
-  }
-  componentWillUnmount() {
-    this.props.onRef(undefined)
-  }*/
-
-  //componentDidMount() {
-  //  clearTimeout(this.timeout);
-  //}
-
-  /*  componentWillUnmount() {
-    if (this.timeout) {
-      clearTimeout(this.timeout)
-      //this.timeout = null
-    }
-  }
-
-  timeout = (interactableEl) => {
-          if(interactableEl){
-            setTimeout(function() {
-              interactableEl.snapTo({index: 1});
-              console.log("Таймаут кончился");
-            }, this.state.timer);
-          }else{
-            clearTimeout(this.timeout)
-          }
-  }
-Этот код работает не корректно, так как неправильно происходит unmount компонента
-*/
-
-  /*setTimePassed() {
-     this.setState({timePassed: true});
-  }*/
-
   render() {
     const activeOpacity = this.state.position !== 1 ? 1 : 1;
     return (
@@ -98,8 +42,6 @@ export default class SwipeRowCart extends React.Component {
             style={[styles.button]}
             onPress={() => {
               this.props.action(this.props.index, -1);
-              //this.state.await=false;
-              //console.log(this.state.timer);
             }}>
             <InteractableIcon
               name="remove-circle"
@@ -135,7 +77,6 @@ export default class SwipeRowCart extends React.Component {
                     inputRange: [-75, -50],
                     outputRange: [1, 0],
                     extrapolateLeft: 'clamp',
-                    //extrapolateRight: 'clamp'
                   }),
                   transform: [
                     {
@@ -143,7 +84,6 @@ export default class SwipeRowCart extends React.Component {
                         inputRange: [-75, -50],
                         outputRange: [1, 0.7],
                         extrapolateLeft: 'clamp',
-                        //extrapolateRight: 'clamp'
                       }),
                     },
                   ],
@@ -158,8 +98,6 @@ export default class SwipeRowCart extends React.Component {
               if (this.props.qty < 99) {
                 this.props.action(this.props.index, 1);
               }
-              //this.state.await=true;
-              //console.log(this.state.timer);
             }}>
             <InteractableIcon
               name="add-circle"
@@ -170,7 +108,6 @@ export default class SwipeRowCart extends React.Component {
                     inputRange: [-75, -50],
                     outputRange: [1, 0],
                     extrapolateLeft: 'clamp',
-                    //extrapolateRight: 'clamp'
                   }),
                   transform: [
                     {
@@ -178,7 +115,6 @@ export default class SwipeRowCart extends React.Component {
                         inputRange: [-75, -50],
                         outputRange: [1, 0.7],
                         extrapolateLeft: 'clamp',
-                        //extrapolateRight: 'clamp'
                       }),
                     },
                   ],
@@ -199,7 +135,6 @@ export default class SwipeRowCart extends React.Component {
             style={[styles.button]}
             onPress={() => {
               this.props.action(this.props.index, 0);
-              const deletebtn = true;
             }}>
             <InteractableIcon
               name="trash"
@@ -270,18 +205,11 @@ export default class SwipeRowCart extends React.Component {
   onSnap({nativeEvent}) {
     const {index} = nativeEvent;
     this.setState({position: index});
-    /*if(!this.interactableElem){
-      clearTimeout(this.timeout)
-    }*/
   }
 
   onRowPress() {
     const {isMoving, position} = this.state;
-    /*    if (!isMoving && position == 2 || position == 0) {
-      this.interactableElem.snapTo({index: 1});
-    }else{
-      this.interactableElem.snapTo({index: 2});
-    }*/
+
     if (!isMoving && position == 1) {
       this.interactableElem.snapTo({index: 2});
     } else {
@@ -297,12 +225,5 @@ export default class SwipeRowCart extends React.Component {
   onStopMoving() {
     this.setState({isMoving: false});
     const element = this.interactableElem;
-    /*const { position } = this.state;
-    if(position == 2 && element){
-      this.timeout(element);
-    }*/
   }
-  /*onButtonPress(name) {
-    alert(`Button ${name} pressed`);
-  }*/
 }
