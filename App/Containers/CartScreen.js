@@ -78,7 +78,7 @@ class CartScreen extends React.Component {
 
   render() {
     //Начало подсчета итоговых цен
-    var subTotal = 0;
+    let subTotal = 0;
 
     (this.props.items || []).map((section, i) => {
       subTotal += parseFloat(section.qty) * parseFloat(section.price);
@@ -86,10 +86,10 @@ class CartScreen extends React.Component {
     console.log(subTotal);
 
     //calculate tax
-    var tax = ((subTotal / 100) * this.props.skidka).toFixed(0);
+    let tax = ((subTotal / 100) * this.props.skidka).toFixed(0);
 
     //Calucalte total
-    var TOTAL = subTotal - tax;
+    let TOTAL = subTotal - tax;
     //Конец подсчета итоговых цен
 
     return (

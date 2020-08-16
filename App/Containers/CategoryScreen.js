@@ -158,7 +158,7 @@ class CategoryScreen extends Component {
   };
 
   prepareToAddToCart(item) {
-    var newItem = {
+    let newItem = {
       qty: 1,
       id: item.id,
       name: item.name,

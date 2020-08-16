@@ -174,10 +174,10 @@ class CheckoutScreen extends React.Component {
       const addOrderData = () => {
         //Записываем в базу
         return new Promise((resolve, reject) => {
-          var newRef = firebase().ref('Заказы').push().key;
-          var dateandtime = new Date();
-          var productsarray = [];
-          var products = this.state.products;
+          const newRef = firebase().ref('Заказы').push().key;
+          const dateandtime = new Date();
+          const productsarray = [];
+          const products = this.state.products;
           products.map((product, i) => {
             productsarray.push({
               id: product.id,
@@ -186,7 +186,7 @@ class CheckoutScreen extends React.Component {
               количество: product.qty,
             });
           });
-          var data = {
+          let data = {
             id: Moment(dateandtime).format('x').slice(-5), //newRef.toString().slice(-4),
             имя: this.state.nameClient,
             телефон: this.state.phoneClient,
@@ -218,7 +218,7 @@ class CheckoutScreen extends React.Component {
        */
       const sendGridEmail = (/*,cart,shipping,subTotal,callback*/) => {
         return new Promise((resolve, reject) => {
-          var message =
+          let message =
             '\nЗаказ №' + this.state.orderid + '\n\n=============\n';
           message += 'Имя: ' + this.state.nameClient + '\n';
           message += 'Телефон: ' + this.state.phoneClient + '\n';
@@ -230,7 +230,7 @@ class CheckoutScreen extends React.Component {
           message += 'Статус: ' + this.state.orderstatus;
           message += '\n=============\n';
           message += '\n';
-          var products = this.state.products;
+          let products = this.state.products;
           //Iterate the messages
           products.map((product, i) => {
             message += product.name + '\n';

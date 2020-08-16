@@ -47,7 +47,7 @@ class ItemScreen extends React.Component {
   };
 
   prepareToAddToCart() {
-    var newItem = {
+    const newItem = {
       qty: 1,
       id: this.state.item.id,
       name: this.state.item.name,

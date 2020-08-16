@@ -9,8 +9,8 @@ export default class CartIconHeader extends React.Component {
   }
 
   render() {
-    var itemsQty = 0;
-    var itemslimitQty = '99+';
+    let itemsQty = 0;
+    let itemslimitQty = '99+';
     (this.props.items || []).map((section, i) => {
       itemsQty += parseFloat(section.qty);
     });
