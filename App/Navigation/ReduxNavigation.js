@@ -1,5 +1,4 @@
 import React from 'react';
-import * as ReactNavigation from 'react-navigation';
 import {connect} from 'react-redux';
 import AppNavigation from './AppNavigation';
 

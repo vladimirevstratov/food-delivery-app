@@ -40,6 +40,9 @@ class CategoryScreen extends Component {
   }
 
   componentDidMount() {
+
+    console.log('>>this.props', this.props)
+
     BackHandler.addEventListener('hardwareBackPress', () => {
       this.props.navigation.goBack();
       return false;
@@ -169,10 +172,12 @@ class CategoryScreen extends Component {
   }
 
   handlePressItem = (item) => {
+    console.log('>>>item', item)
     this.props.navigation.navigate('ItemScreen', {data1: item});
   };
 
   render() {
+
     return (
       <Container style={styles.container}>
         <Header

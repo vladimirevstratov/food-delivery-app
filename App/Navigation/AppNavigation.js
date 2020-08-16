@@ -1,7 +1,6 @@
 import React from 'react';
 import {StackNavigator} from 'react-navigation';
 import NavigationDrawer from './NavigationDrawer';
-import CategoryScreen from '../Containers/CategoryScreen';
 import CartScreen from '../Containers/CartScreen';
 import ItemScreen from '../Containers/ItemScreen';
 import CheckoutScreen from '../Containers/CheckoutScreen';
@@ -12,10 +11,9 @@ import styles from './Styles/NavigationStyles';
 const PrimaryNav = StackNavigator(
   {
     NavigationDrawer: {screen: NavigationDrawer},
-    //CategoryScreen: { screen: CategoryScreen },
-    CartScreen: {screen: () => <CartScreen />},
-    ItemScreen: {screen: () => <ItemScreen />},
-    CheckoutScreen: {screen: () => <CheckoutScreen />},
+    CartScreen: {screen: (props) => <CartScreen {...props} />},
+    ItemScreen: {screen: (props) => <ItemScreen {...props} />},
+    CheckoutScreen: {screen: (props) => <CheckoutScreen {...props} />},
   },
   {
     // Default config for all screens
