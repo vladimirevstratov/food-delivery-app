@@ -1,28 +1,14 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
-//import Config from '../Config/AppConfig';
 import Actions from '../Actions/Creators';
 import SwipeRowCart from '../Components/SwipeRowCart';
 import CartTotal from '../Components/CartTotal';
-import {
-  Image,
-  BackHandler,
-  View,
-  FlatList,
-  Animated,
-  TouchableOpacity,
-  TouchableHighlight,
-  Slider,
-  Dimensions,
-  Alert,
-} from 'react-native';
+import {Image, BackHandler, View, FlatList, Dimensions} from 'react-native';
 import {
   Container,
   Header,
   Content,
-  List,
   Footer,
-  ListItem,
   Text,
   Left,
   Right,
@@ -30,15 +16,10 @@ import {
   Button,
   Icon,
   Title,
-  Separator,
-  Thumbnail,
 } from 'native-base';
 import styles from './Styles/CartScreenStyles';
 import {NavigationActions} from 'react-navigation';
-import Interactable from 'react-native-interactable';
 import {Colors} from '../Themes/';
-
-const Screen = Dimensions.get('window');
 
 class CartScreen extends React.Component {
   constructor(props) {

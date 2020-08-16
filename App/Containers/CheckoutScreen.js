@@ -1,25 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Actions from '../Actions/Creators';
-//import Config from '../Config/AppConfig';
 import firebase from '@react-native-firebase/database';
-import {
-  Image,
-  BackHandler,
-  View,
-  TouchableNativeFeedback,
-  Alert,
-  ActivityIndicator,
-  NetInfo,
-} from 'react-native';
+import {BackHandler, View, Alert, ActivityIndicator} from 'react-native';
 import {
   Container,
   Header,
   Content,
   Footer,
   Input,
-  List,
-  ListItem,
   Item,
   Text,
   Left,
@@ -29,10 +18,8 @@ import {
   Button,
   Title,
   Toast,
-  Separator,
-  Thumbnail,
 } from 'native-base';
-import {RadioButtons, SegmentedControls} from 'react-native-radio-buttons';
+import {SegmentedControls} from 'react-native-radio-buttons';
 import {NavigationActions} from 'react-navigation';
 import Moment from 'moment';
 import styles from './Styles/CheckoutScreenStyles';
@@ -97,8 +84,8 @@ class CheckoutScreen extends React.Component {
       actions: [NavigationActions.navigate({routeName: 'NavigationDrawer'})],
     });
 
-    setOrderwithConnectionChecking = () => {
-      disablebtnfunction = () => {
+    const setOrderwithConnectionChecking = () => {
+      const disablebtnfunction = () => {
         //Отключение кнопки продолжить
         return new Promise((resolve, reject) => {
           this.setState({btndisabled: true}, () => {
@@ -107,7 +94,7 @@ class CheckoutScreen extends React.Component {
         });
       };
 
-      checkingisInputsCorrect = () => {
+      const checkingisInputsCorrect = () => {
         //Отключение кнопки продолжить
         return new Promise((resolve, reject) => {
           if (
@@ -145,7 +132,7 @@ class CheckoutScreen extends React.Component {
         });
       };
 
-      isConnectionOnline = () => {
+      const isConnectionOnline = () => {
         //Проверка на доступность интернет соединения
         return new Promise((resolve, reject) => {
           fetch('https://google.com')
@@ -175,7 +162,7 @@ class CheckoutScreen extends React.Component {
         });
       };
 
-      loadingActivitytrue = () => {
+      const loadingActivitytrue = () => {
         //Отключение кнопки продолжить
         return new Promise((resolve, reject) => {
           this.setState({loading: true}, () => {
@@ -184,7 +171,7 @@ class CheckoutScreen extends React.Component {
         });
       };
 
-      addOrderData = () => {
+      const addOrderData = () => {
         //Записываем в базу
         return new Promise((resolve, reject) => {
           var newRef = firebase().ref('Заказы').push().key;
@@ -229,7 +216,7 @@ class CheckoutScreen extends React.Component {
       /**
        * SEND GRID SEND
        */
-      sendGridEmail = (/*,cart,shipping,subTotal,callback*/) => {
+      const sendGridEmail = (/*,cart,shipping,subTotal,callback*/) => {
         return new Promise((resolve, reject) => {
           var message =
             '\nЗаказ №' + this.state.orderid + '\n\n=============\n';
@@ -261,7 +248,7 @@ class CheckoutScreen extends React.Component {
           fetch('https://api.sendgrid.com/v3/mail/send', {
             method: 'POST',
             headers: {
-              Authorization: 'Bearer ' + Config.SENDGRID_API_KEY,
+              Authorization: 'Bearer ' /* + Config.SENDGRID_API_KEY*/,
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
@@ -269,7 +256,7 @@ class CheckoutScreen extends React.Component {
                 {
                   to: [
                     {
-                      email: /*Config.sendToEmail*/'email',
+                      email: /*Config.sendToEmail*/ 'email',
                     },
                   ],
                   subject:
@@ -302,7 +289,7 @@ class CheckoutScreen extends React.Component {
         });
       };
 
-      loadingActivityfalse = () => {
+      const loadingActivityfalse = () => {
         //Отключение кнопки продолжить
         return new Promise((resolve, reject) => {
           this.setState({loading: false}, () => {
@@ -312,7 +299,7 @@ class CheckoutScreen extends React.Component {
         });
       };
 
-      clearCartandAlertandNavigate = () => {
+      const clearCartandAlertandNavigate = () => {
         //Очистка корзины и навигация на главную страницу
         return new Promise((resolve, reject) => {
           Alert.alert(

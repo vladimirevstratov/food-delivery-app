@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ScrollView, Image, BackHandler, Linking} from 'react-native';
+import {Image, Linking} from 'react-native';
 import {List, ListItem, Text, View, Content, Icon, Footer} from 'native-base';
 
 import styles from './Styles/DrawerContentStyles';
@@ -21,7 +21,6 @@ class DrawerContent extends Component {
   render() {
     const navigation = this.props.navigation;
     const items = this.props.items;
-    //console.log(this.props);
     return (
       <View style={styles.container}>
         <View style={styles.header}>
@@ -51,5 +50,3 @@ class DrawerContent extends Component {
 }
 
 export default DrawerContent;
-
-//Рендер иконок слева от routeName<Icon name="md-cart" style={{ fontSize: 25, color: Colors.blue0 }}/>

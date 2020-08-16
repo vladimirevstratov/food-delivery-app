@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Actions from '../Actions/Creators';
-import {Image, BackHandler, TouchableWithoutFeedback} from 'react-native';
+import {Image, BackHandler} from 'react-native';
 import {
   Text,
   View,
@@ -15,12 +15,10 @@ import {
   Body,
   Icon,
   Button,
-  Badge,
 } from 'native-base';
 import CartIconHeader from '../Components/CartIconHeader';
 import {Colors} from '../Themes/';
 import {Col, Row, Grid} from 'react-native-easy-grid';
-// import Icon from 'react-native-vector-icons/Ionicons'
 
 // Styles
 import styles from './Styles/ItemScreenStyles';
@@ -32,10 +30,6 @@ class ItemScreen extends React.Component {
     this.state = {
       loading: false,
       item: this.props.navigation.state.params.data1,
-      //page: 1,
-      //seed: 1,
-      //error: null,
-      //refreshing: false
     };
   }
 
@@ -61,18 +55,8 @@ class ItemScreen extends React.Component {
       photo: this.state.item.photo,
       price: this.state.item.price,
     };
-    //console.log(this.props);
-    //console.log(newItem);
-    /*Alert.alert(
-      I18n.t('addedInCart'),
-      this.props.productName+", "+this.props.data.price_name+" "+I18n.t('productAdded'),
-    )*/
     this.props.addCart(newItem);
   }
-
-  /*handlePressCategory = () => {
-	  this.props.navigation.navigate("CategoryScreen");
-	};*/
 
   render() {
     return (

@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import {
   View,
   Animated,
@@ -6,7 +6,6 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import {Text, Icon} from 'native-base';
-// Styles
 import styles from './Styles/SwipeRowStyles';
 import Interactable from 'react-native-interactable';
 import {Colors} from '../Themes/';

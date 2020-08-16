@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {ApplicationStyles, Metrics, Colors} from '../../Themes/';
+import {ApplicationStyles, Metrics} from '../../Themes/';
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
@@ -60,5 +60,4 @@ export default StyleSheet.create({
   slider: {
     height: 40,
   },
-  //ENDING row action StyleSheet
 });

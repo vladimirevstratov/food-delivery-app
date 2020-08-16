@@ -1,13 +1,7 @@
 import React from 'react';
 import firebase from '@react-native-firebase/database';
 import {connect} from 'react-redux';
-import {
-  Image,
-  BackHandler,
-  FlatList,
-  TouchableOpacity,
-  ActivityIndicator,
-} from 'react-native';
+import {BackHandler, FlatList, ActivityIndicator} from 'react-native';
 import {
   Text,
   View,
@@ -18,9 +12,7 @@ import {
   Left,
   Right,
   Body,
-  Badge,
   Icon,
-  List,
   ListItem,
   Button,
   Thumbnail,

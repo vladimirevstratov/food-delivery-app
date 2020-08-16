@@ -8,10 +8,10 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "node_modules/.bin/eslint \"./src/**/*.{js,ts,tsx,jsx}\" --fix",
-    "pretty:fix": "node_modules/.bin/prettier --write \"./src/**/*.{js,ts,tsx,jsx}\"",
-    "lint:check": "node_modules/.bin/eslint \"./src/**/*.{js,ts,tsx,jsx}\"",
-    "pretty:check": "node_modules/.bin/prettier --check \"./src/**/*.{js,ts,tsx,jsx}\""
+    "lint:fix": "node_modules/.bin/eslint \"./App/**/*.{js,ts,tsx,jsx}\" --fix",
+    "pretty:fix": "node_modules/.bin/prettier --write \"./App/**/*.{js,ts,tsx,jsx}\"",
+    "lint:check": "node_modules/.bin/eslint \"./App/**/*.{js,ts,tsx,jsx}\"",
+    "pretty:check": "node_modules/.bin/prettier --check \"./App/**/*.{js,ts,tsx,jsx}\""
   },
   "dependencies": {
     "@react-native-firebase/app": "^8.3.0",

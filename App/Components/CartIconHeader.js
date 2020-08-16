@@ -1,39 +1,6 @@
-import React, {PropTypes} from 'react';
-import {connect} from 'react-redux';
-//import Config from '../Config/AppConfig';
-import Actions from '../Actions/Creators';
-import {
-  Image,
-  BackHandler,
-  View,
-  FlatList,
-  Animated,
-  TouchableOpacity,
-  TouchableHighlight,
-  Slider,
-  Dimensions,
-  Alert,
-  Platform,
-} from 'react-native';
-import {
-  Container,
-  Header,
-  Content,
-  List,
-  Footer,
-  ListItem,
-  Text,
-  Left,
-  Right,
-  Body,
-  Button,
-  Badge,
-  Icon,
-  Title,
-  Separator,
-  Thumbnail,
-} from 'native-base';
-import styles from '../Containers/Styles/CartScreenStyles';
+import React from 'react';
+import {Platform} from 'react-native';
+import {Text, Button, Badge, Icon} from 'native-base';
 import {Colors} from '../Themes/';
 
 export default class CartIconHeader extends React.Component {

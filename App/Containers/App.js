@@ -1,5 +1,4 @@
 import '../Config';
-import DebugConfig from '../Config/DebugConfig';
 import React, {Component} from 'react';
 import {Provider} from 'react-redux';
 import RootContainer from './RootContainer';
@@ -11,7 +10,6 @@ const store = createStore();
 //текущий стор
 //console.log(store.getState())
 
-const unsubscribe = store.subscribe(() => console.log(store.getState()));
 /**
  * Provides an entry point into our application.  Both index.ios.js and index.android.js
  * call this component first.

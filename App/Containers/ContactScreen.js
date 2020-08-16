@@ -1,16 +1,13 @@
 import {connect} from 'react-redux';
-import Actions from '../Actions/Creators';
 import React, {Component} from 'react';
 import {
   View,
-  FlatList,
   ActivityIndicator,
   BackHandler,
   TouchableWithoutFeedback,
   Image,
   Linking,
 } from 'react-native';
-//import { SearchBar } from "react-native-elements";
 import MapView, {Marker} from 'react-native-maps';
 import {
   Container,
@@ -22,14 +19,9 @@ import {
   Left,
   Right,
   Body,
-  Badge,
-  List,
-  ListItem,
-  Thumbnail,
   Text,
   Tab,
   Tabs,
-  ScrollableTab,
   Item,
 } from 'native-base';
 import CartIconHeader from '../Components/CartIconHeader';

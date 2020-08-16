@@ -9,7 +9,7 @@ export const INITIAL_STATE = Immutable({
 
 const addsettings = (state, action) => {
   console.log('Load Settings');
-  newState = JSON.parse(JSON.stringify(state));
+  let newState = JSON.parse(JSON.stringify(state));
 
   if (!newState.skidka) {
     //Создание settings, если он не существует(первый клик в корзину)
