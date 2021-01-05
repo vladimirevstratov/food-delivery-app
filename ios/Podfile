@@ -9,6 +9,7 @@ target 'VeganFoodDelivery' do
   use_react_native!(:path => config["reactNativePath"])
 
   pod 'Interactable', :path => '../node_modules/react-native-interactable'
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   target 'VeganFoodDeliveryTests' do
     inherit! :complete

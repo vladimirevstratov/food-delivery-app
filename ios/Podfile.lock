@@ -341,7 +341,7 @@ PODS:
     - RNFBApp
   - RNGestureHandler (1.7.0):
     - React
-  - RNVectorIcons (7.0.0):
+  - RNVectorIcons (7.1.0):
     - React
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -547,10 +547,10 @@ SPEC CHECKSUMS:
   RNFBApp: d55b3a69d199cff25ecf4f3bf41a86c47aa37d57
   RNFBDatabase: 2de49cc2b01698412b231b2e369af88c33465d73
   RNGestureHandler: b6b359bb800ae399a9c8b27032bdbf7c18f08a08
-  RNVectorIcons: da6fe858f5a65d7bbc3379540a889b0b12aa5976
+  RNVectorIcons: bc69e6a278b14842063605de32bec61f0b251a59
   Yoga: 7740b94929bbacbddda59bf115b5317e9a161598
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: bdf57b7e79e9d70bd94d90dce43015cb08e98f85
+PODFILE CHECKSUM: 8b5e347859f81ff3f01135f30721c19e2fcf378e
 
 COCOAPODS: 1.9.3
