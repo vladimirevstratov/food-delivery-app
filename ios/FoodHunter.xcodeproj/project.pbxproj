@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* FoodHunterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FoodHunterTests.m */; };
-		021B917625A4763A001BB235 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 021B917525A4763A001BB235 /* GoogleService-Info.plist */; };
-		021B917725A4763A001BB235 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 021B917525A4763A001BB235 /* GoogleService-Info.plist */; };
+		027368E525A47EEE00BB5F2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 027368E425A47EEE00BB5F2B /* GoogleService-Info.plist */; };
+		027368E625A47EEE00BB5F2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 027368E425A47EEE00BB5F2B /* GoogleService-Info.plist */; };
 		11E8748D0422F5EC88A2BD2F /* libPods-FoodHunter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB82BF224FC7636391E4D7CA /* libPods-FoodHunter.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -44,7 +44,7 @@
 		00E356EE1AD99517003FC87E /* FoodHunterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodHunterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* FoodHunterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodHunterTests.m; sourceTree = "<group>"; };
-		021B917525A4763A001BB235 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		027368E425A47EEE00BB5F2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* FoodHunter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodHunter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = FoodHunter/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = FoodHunter/AppDelegate.m; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				021B917525A4763A001BB235 /* GoogleService-Info.plist */,
+				027368E425A47EEE00BB5F2B /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* FoodHunter */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* FoodHunterTests */,
@@ -319,7 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				021B917725A4763A001BB235 /* GoogleService-Info.plist in Resources */,
+				027368E625A47EEE00BB5F2B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +329,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				021B917625A4763A001BB235 /* GoogleService-Info.plist in Resources */,
+				027368E525A47EEE00BB5F2B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
