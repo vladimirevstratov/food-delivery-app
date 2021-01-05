@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "VeganFoodDelivery.app"
-               BlueprintName = "VeganFoodDelivery"
-               ReferencedContainer = "container:VeganFoodDelivery.xcodeproj">
+               BuildableName = "FoodHunter.app"
+               BlueprintName = "FoodHunter"
+               ReferencedContainer = "container:FoodHunter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "VeganFoodDeliveryTests.xctest"
-               BlueprintName = "VeganFoodDeliveryTests"
-               ReferencedContainer = "container:VeganFoodDelivery.xcodeproj">
+               BuildableName = "FoodHunterTests.xctest"
+               BlueprintName = "FoodHunterTests"
+               ReferencedContainer = "container:FoodHunter.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "VeganFoodDelivery.app"
-            BlueprintName = "VeganFoodDelivery"
-            ReferencedContainer = "container:VeganFoodDelivery.xcodeproj">
+            BuildableName = "FoodHunter.app"
+            BlueprintName = "FoodHunter"
+            ReferencedContainer = "container:FoodHunter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "VeganFoodDelivery.app"
-            BlueprintName = "VeganFoodDelivery"
-            ReferencedContainer = "container:VeganFoodDelivery.xcodeproj">
+            BuildableName = "FoodHunter.app"
+            BlueprintName = "FoodHunter"
+            ReferencedContainer = "container:FoodHunter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
