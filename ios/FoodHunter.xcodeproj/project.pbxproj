@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* VeganFoodDeliveryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* VeganFoodDeliveryTests.m */; };
-		024B4CC425A3A4460002999C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 024B4CC325A3A4460002999C /* GoogleService-Info.plist */; };
-		024B4CC525A3A4460002999C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 024B4CC325A3A4460002999C /* GoogleService-Info.plist */; };
-		11E8748D0422F5EC88A2BD2F /* libPods-VeganFoodDelivery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB82BF224FC7636391E4D7CA /* libPods-VeganFoodDelivery.a */; };
+		00E356F31AD99517003FC87E /* FoodHunterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FoodHunterTests.m */; };
+		021B917625A4763A001BB235 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 021B917525A4763A001BB235 /* GoogleService-Info.plist */; };
+		021B917725A4763A001BB235 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 021B917525A4763A001BB235 /* GoogleService-Info.plist */; };
+		11E8748D0422F5EC88A2BD2F /* libPods-FoodHunter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB82BF224FC7636391E4D7CA /* libPods-FoodHunter.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* VeganFoodDeliveryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* VeganFoodDeliveryTests.m */; };
-		56B04EAAF70A09E546807B38 /* libPods-VeganFoodDelivery-VeganFoodDeliveryTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48458C69590697D5D462E8EF /* libPods-VeganFoodDelivery-VeganFoodDeliveryTests.a */; };
+		2DCD954D1E0B4F2C00145EB5 /* FoodHunterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FoodHunterTests.m */; };
+		56B04EAAF70A09E546807B38 /* libPods-FoodHunter-FoodHunterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48458C69590697D5D462E8EF /* libPods-FoodHunter-FoodHunterTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -28,40 +28,40 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = VeganFoodDelivery;
+			remoteInfo = FoodHunter;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "VeganFoodDelivery-tvOS";
+			remoteInfo = "FoodHunter-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* VeganFoodDeliveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VeganFoodDeliveryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* FoodHunterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodHunterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* VeganFoodDeliveryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VeganFoodDeliveryTests.m; sourceTree = "<group>"; };
-		024B4CC325A3A4460002999C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* VeganFoodDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeganFoodDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = VeganFoodDelivery/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = VeganFoodDelivery/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = VeganFoodDelivery/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = VeganFoodDelivery/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = VeganFoodDelivery/main.m; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* VeganFoodDelivery-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VeganFoodDelivery-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* VeganFoodDelivery-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VeganFoodDelivery-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E3353F1C67737C1D488BEE4 /* Pods-VeganFoodDelivery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeganFoodDelivery.release.xcconfig"; path = "Target Support Files/Pods-VeganFoodDelivery/Pods-VeganFoodDelivery.release.xcconfig"; sourceTree = "<group>"; };
-		48458C69590697D5D462E8EF /* libPods-VeganFoodDelivery-VeganFoodDeliveryTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VeganFoodDelivery-VeganFoodDeliveryTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7EA6AEE6E1EA5D6E295A817E /* Pods-VeganFoodDelivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeganFoodDelivery.debug.xcconfig"; path = "Target Support Files/Pods-VeganFoodDelivery/Pods-VeganFoodDelivery.debug.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = VeganFoodDelivery/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C9046131142BE375AA3DBEBF /* Pods-VeganFoodDelivery-VeganFoodDeliveryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeganFoodDelivery-VeganFoodDeliveryTests.release.xcconfig"; path = "Target Support Files/Pods-VeganFoodDelivery-VeganFoodDeliveryTests/Pods-VeganFoodDelivery-VeganFoodDeliveryTests.release.xcconfig"; sourceTree = "<group>"; };
-		DF28C271802BC0F8528068D5 /* Pods-VeganFoodDelivery-VeganFoodDeliveryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeganFoodDelivery-VeganFoodDeliveryTests.debug.xcconfig"; path = "Target Support Files/Pods-VeganFoodDelivery-VeganFoodDeliveryTests/Pods-VeganFoodDelivery-VeganFoodDeliveryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* FoodHunterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodHunterTests.m; sourceTree = "<group>"; };
+		021B917525A4763A001BB235 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* FoodHunter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodHunter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = FoodHunter/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = FoodHunter/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FoodHunter/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FoodHunter/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FoodHunter/main.m; sourceTree = "<group>"; };
+		2D02E47B1E0B4A5D006451C7 /* FoodHunter-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FoodHunter-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* FoodHunter-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FoodHunter-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E3353F1C67737C1D488BEE4 /* Pods-FoodHunter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodHunter.release.xcconfig"; path = "Target Support Files/Pods-FoodHunter/Pods-FoodHunter.release.xcconfig"; sourceTree = "<group>"; };
+		48458C69590697D5D462E8EF /* libPods-FoodHunter-FoodHunterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FoodHunter-FoodHunterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EA6AEE6E1EA5D6E295A817E /* Pods-FoodHunter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodHunter.debug.xcconfig"; path = "Target Support Files/Pods-FoodHunter/Pods-FoodHunter.debug.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = FoodHunter/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C9046131142BE375AA3DBEBF /* Pods-FoodHunter-FoodHunterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodHunter-FoodHunterTests.release.xcconfig"; path = "Target Support Files/Pods-FoodHunter-FoodHunterTests/Pods-FoodHunter-FoodHunterTests.release.xcconfig"; sourceTree = "<group>"; };
+		DF28C271802BC0F8528068D5 /* Pods-FoodHunter-FoodHunterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodHunter-FoodHunterTests.debug.xcconfig"; path = "Target Support Files/Pods-FoodHunter-FoodHunterTests/Pods-FoodHunter-FoodHunterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		FB82BF224FC7636391E4D7CA /* libPods-VeganFoodDelivery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VeganFoodDelivery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB82BF224FC7636391E4D7CA /* libPods-FoodHunter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FoodHunter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56B04EAAF70A09E546807B38 /* libPods-VeganFoodDelivery-VeganFoodDeliveryTests.a in Frameworks */,
+				56B04EAAF70A09E546807B38 /* libPods-FoodHunter-FoodHunterTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11E8748D0422F5EC88A2BD2F /* libPods-VeganFoodDelivery.a in Frameworks */,
+				11E8748D0422F5EC88A2BD2F /* libPods-FoodHunter.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,13 +98,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* VeganFoodDeliveryTests */ = {
+		00E356EF1AD99517003FC87E /* FoodHunterTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* VeganFoodDeliveryTests.m */,
+				00E356F21AD99517003FC87E /* FoodHunterTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = VeganFoodDeliveryTests;
+			path = FoodHunterTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -115,7 +115,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* VeganFoodDelivery */ = {
+		13B07FAE1A68108700A75B9A /* FoodHunter */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -126,7 +126,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = VeganFoodDelivery;
+			name = FoodHunter;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -134,8 +134,8 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				FB82BF224FC7636391E4D7CA /* libPods-VeganFoodDelivery.a */,
-				48458C69590697D5D462E8EF /* libPods-VeganFoodDelivery-VeganFoodDeliveryTests.a */,
+				FB82BF224FC7636391E4D7CA /* libPods-FoodHunter.a */,
+				48458C69590697D5D462E8EF /* libPods-FoodHunter-FoodHunterTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -143,10 +143,10 @@
 		668ACC8B3F7E4F7BDE8E1B52 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7EA6AEE6E1EA5D6E295A817E /* Pods-VeganFoodDelivery.debug.xcconfig */,
-				3E3353F1C67737C1D488BEE4 /* Pods-VeganFoodDelivery.release.xcconfig */,
-				DF28C271802BC0F8528068D5 /* Pods-VeganFoodDelivery-VeganFoodDeliveryTests.debug.xcconfig */,
-				C9046131142BE375AA3DBEBF /* Pods-VeganFoodDelivery-VeganFoodDeliveryTests.release.xcconfig */,
+				7EA6AEE6E1EA5D6E295A817E /* Pods-FoodHunter.debug.xcconfig */,
+				3E3353F1C67737C1D488BEE4 /* Pods-FoodHunter.release.xcconfig */,
+				DF28C271802BC0F8528068D5 /* Pods-FoodHunter-FoodHunterTests.debug.xcconfig */,
+				C9046131142BE375AA3DBEBF /* Pods-FoodHunter-FoodHunterTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -161,10 +161,10 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				024B4CC325A3A4460002999C /* GoogleService-Info.plist */,
-				13B07FAE1A68108700A75B9A /* VeganFoodDelivery */,
+				021B917525A4763A001BB235 /* GoogleService-Info.plist */,
+				13B07FAE1A68108700A75B9A /* FoodHunter */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* VeganFoodDeliveryTests */,
+				00E356EF1AD99517003FC87E /* FoodHunterTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				668ACC8B3F7E4F7BDE8E1B52 /* Pods */,
@@ -177,10 +177,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* VeganFoodDelivery.app */,
-				00E356EE1AD99517003FC87E /* VeganFoodDeliveryTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* VeganFoodDelivery-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* VeganFoodDelivery-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* FoodHunter.app */,
+				00E356EE1AD99517003FC87E /* FoodHunterTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* FoodHunter-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* FoodHunter-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,9 +188,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* VeganFoodDeliveryTests */ = {
+		00E356ED1AD99517003FC87E /* FoodHunterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "VeganFoodDeliveryTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "FoodHunterTests" */;
 			buildPhases = (
 				864ED0082372FACE47744546 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -203,14 +203,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = VeganFoodDeliveryTests;
-			productName = VeganFoodDeliveryTests;
-			productReference = 00E356EE1AD99517003FC87E /* VeganFoodDeliveryTests.xctest */;
+			name = FoodHunterTests;
+			productName = FoodHunterTests;
+			productReference = 00E356EE1AD99517003FC87E /* FoodHunterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* VeganFoodDelivery */ = {
+		13B07F861A680F5B00A75B9A /* FoodHunter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "VeganFoodDelivery" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "FoodHunter" */;
 			buildPhases = (
 				598C4BF25E7C139D615BF40B /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -225,14 +225,14 @@
 			);
 			dependencies = (
 			);
-			name = VeganFoodDelivery;
-			productName = VeganFoodDelivery;
-			productReference = 13B07F961A680F5B00A75B9A /* VeganFoodDelivery.app */;
+			name = FoodHunter;
+			productName = FoodHunter;
+			productReference = 13B07F961A680F5B00A75B9A /* FoodHunter.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* VeganFoodDelivery-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* FoodHunter-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "VeganFoodDelivery-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "FoodHunter-tvOS" */;
 			buildPhases = (
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
@@ -244,14 +244,14 @@
 			);
 			dependencies = (
 			);
-			name = "VeganFoodDelivery-tvOS";
-			productName = "VeganFoodDelivery-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* VeganFoodDelivery-tvOS.app */;
+			name = "FoodHunter-tvOS";
+			productName = "FoodHunter-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* FoodHunter-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* VeganFoodDelivery-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* FoodHunter-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "VeganFoodDelivery-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "FoodHunter-tvOSTests" */;
 			buildPhases = (
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
@@ -262,9 +262,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "VeganFoodDelivery-tvOSTests";
-			productName = "VeganFoodDelivery-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* VeganFoodDelivery-tvOSTests.xctest */;
+			name = "FoodHunter-tvOSTests";
+			productName = "FoodHunter-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* FoodHunter-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -293,7 +293,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "VeganFoodDelivery" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "FoodHunter" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -306,10 +306,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* VeganFoodDelivery */,
-				00E356ED1AD99517003FC87E /* VeganFoodDeliveryTests */,
-				2D02E47A1E0B4A5D006451C7 /* VeganFoodDelivery-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* VeganFoodDelivery-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* FoodHunter */,
+				00E356ED1AD99517003FC87E /* FoodHunterTests */,
+				2D02E47A1E0B4A5D006451C7 /* FoodHunter-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* FoodHunter-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -319,7 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				024B4CC525A3A4460002999C /* GoogleService-Info.plist in Resources */,
+				021B917725A4763A001BB235 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +329,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				024B4CC425A3A4460002999C /* GoogleService-Info.plist in Resources */,
+				021B917625A4763A001BB235 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,7 +404,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VeganFoodDelivery-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FoodHunter-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -426,7 +426,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VeganFoodDelivery-VeganFoodDeliveryTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FoodHunter-FoodHunterTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -439,7 +439,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VeganFoodDelivery/Pods-VeganFoodDelivery-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FoodHunter/Pods-FoodHunter-resources.sh",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -480,7 +480,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VeganFoodDelivery/Pods-VeganFoodDelivery-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodHunter/Pods-FoodHunter-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CAC226F0114722CDAC5028EA /* [CP] Copy Pods Resources */ = {
@@ -489,7 +489,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VeganFoodDelivery-VeganFoodDeliveryTests/Pods-VeganFoodDelivery-VeganFoodDeliveryTests-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FoodHunter-FoodHunterTests/Pods-FoodHunter-FoodHunterTests-resources.sh",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -530,7 +530,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VeganFoodDelivery-VeganFoodDeliveryTests/Pods-VeganFoodDelivery-VeganFoodDeliveryTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodHunter-FoodHunterTests/Pods-FoodHunter-FoodHunterTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -578,7 +578,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* VeganFoodDeliveryTests.m in Sources */,
+				00E356F31AD99517003FC87E /* FoodHunterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,7 +604,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* VeganFoodDeliveryTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* FoodHunterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,12 +613,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* VeganFoodDelivery */;
+			target = 13B07F861A680F5B00A75B9A /* FoodHunter */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* VeganFoodDelivery-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* FoodHunter-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -626,14 +626,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF28C271802BC0F8528068D5 /* Pods-VeganFoodDelivery-VeganFoodDeliveryTests.debug.xcconfig */;
+			baseConfigurationReference = DF28C271802BC0F8528068D5 /* Pods-FoodHunter-FoodHunterTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = VeganFoodDeliveryTests/Info.plist;
+				INFOPLIST_FILE = FoodHunterTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -643,17 +643,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VeganFoodDelivery.app/VeganFoodDelivery";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoodHunter.app/FoodHunter";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9046131142BE375AA3DBEBF /* Pods-VeganFoodDelivery-VeganFoodDeliveryTests.release.xcconfig */;
+			baseConfigurationReference = C9046131142BE375AA3DBEBF /* Pods-FoodHunter-FoodHunterTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = VeganFoodDeliveryTests/Info.plist;
+				INFOPLIST_FILE = FoodHunterTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -663,27 +663,27 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VeganFoodDelivery.app/VeganFoodDelivery";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoodHunter.app/FoodHunter";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7EA6AEE6E1EA5D6E295A817E /* Pods-VeganFoodDelivery.debug.xcconfig */;
+			baseConfigurationReference = 7EA6AEE6E1EA5D6E295A817E /* Pods-FoodHunter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = VeganFoodDelivery/Info.plist;
+				INFOPLIST_FILE = FoodHunter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = VeganFoodDelivery;
+				PRODUCT_BUNDLE_IDENTIFIER = com.foodhunter;
+				PRODUCT_NAME = FoodHunter;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -692,20 +692,20 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E3353F1C67737C1D488BEE4 /* Pods-VeganFoodDelivery.release.xcconfig */;
+			baseConfigurationReference = 3E3353F1C67737C1D488BEE4 /* Pods-FoodHunter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = VeganFoodDelivery/Info.plist;
+				INFOPLIST_FILE = FoodHunter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = VeganFoodDelivery;
+				PRODUCT_BUNDLE_IDENTIFIER = com.foodhunter;
+				PRODUCT_NAME = FoodHunter;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -723,14 +723,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "VeganFoodDelivery-tvOS/Info.plist";
+				INFOPLIST_FILE = "FoodHunter-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.VeganFoodDelivery-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.FoodHunter-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -750,14 +750,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "VeganFoodDelivery-tvOS/Info.plist";
+				INFOPLIST_FILE = "FoodHunter-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.VeganFoodDelivery-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.FoodHunter-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -776,17 +776,17 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "VeganFoodDelivery-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "FoodHunter-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.VeganFoodDelivery-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.FoodHunter-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VeganFoodDelivery-tvOS.app/VeganFoodDelivery-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoodHunter-tvOS.app/FoodHunter-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
@@ -802,17 +802,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "VeganFoodDelivery-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "FoodHunter-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.VeganFoodDelivery-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.FoodHunter-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VeganFoodDelivery-tvOS.app/VeganFoodDelivery-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoodHunter-tvOS.app/FoodHunter-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -933,7 +933,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "VeganFoodDeliveryTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "FoodHunterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -942,7 +942,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "VeganFoodDelivery" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "FoodHunter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -951,7 +951,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "VeganFoodDelivery-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "FoodHunter-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -960,7 +960,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "VeganFoodDelivery-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "FoodHunter-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -969,7 +969,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "VeganFoodDelivery" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "FoodHunter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

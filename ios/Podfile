@@ -3,7 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'VeganFoodDelivery' do
+target 'FoodHunter' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
@@ -11,7 +11,7 @@ target 'VeganFoodDelivery' do
   pod 'Interactable', :path => '../node_modules/react-native-interactable'
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
-  target 'VeganFoodDeliveryTests' do
+  target 'FoodHunterTests' do
     inherit! :complete
     # Pods for testing
   end
