@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import Actions from '../Actions/Creators';
 import SwipeRowCart from '../Components/SwipeRowCart';
 import CartTotal from '../Components/CartTotal';
-import {Image, BackHandler, View, FlatList, Dimensions} from 'react-native';
+import {Image, BackHandler, View, FlatList} from 'react-native';
 import {
   Container,
   Header,
@@ -33,10 +33,6 @@ class CartScreen extends React.Component {
   static propTypes = {
     //   items: PropTypes.array,
   };
-
-  /*CartScreen.propTypes = {
-  products: PropTypes.array,
-	}*/
 
   componentWillMount() {
     BackHandler.addEventListener('hardwareBackPress', this.backPressed);

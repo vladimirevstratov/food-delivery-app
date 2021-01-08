@@ -224,6 +224,5 @@ export default class SwipeRowCart extends React.Component {
   }
   onStopMoving() {
     this.setState({isMoving: false});
-    const element = this.interactableElem;
   }
 }
