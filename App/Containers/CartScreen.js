@@ -106,7 +106,7 @@ class CartScreen extends React.Component {
             <Title style={{color: '#222222'}}>КОРЗИНА</Title>
           </Body>
           <Right>
-            {this.props.items.length != 0 && (
+            {this.props.items.length !== 0 && (
               <Button
                 transparent
                 onPress={() => {
@@ -117,7 +117,7 @@ class CartScreen extends React.Component {
             )}
           </Right>
         </Header>
-        {this.props.items.length == 0 ? (
+        {this.props.items.length === 0 ? (
           <Content style={styles.content}>
             <View style={styles.emptycart}>
               <Text style={styles.textemptycart}>Ваша корзина пуста</Text>
@@ -172,7 +172,7 @@ class CartScreen extends React.Component {
           </Content>
         )}
 
-        {this.props.items.length != 0 && (
+        {this.props.items.length !== 0 && (
           <Footer style={styles.footer}>
             <CartTotal
               skidka={this.props.skidka}

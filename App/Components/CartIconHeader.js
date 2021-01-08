@@ -15,7 +15,7 @@ export default class CartIconHeader extends React.Component {
       itemsQty += parseFloat(section.qty);
     });
 
-    return itemsQty == 0 ? (
+    return itemsQty === 0 ? (
       <Button transparent onPress={this.props.onCartPress} style={{right: 5}}>
         <Icon name="cart" style={{color: '#34909F', fontSize: 30}} />
       </Button>
