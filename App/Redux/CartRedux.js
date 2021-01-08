@@ -44,11 +44,11 @@ const updateFun = function (state, action) {
   //console.log(action.index)
   //console.log(action.qty)
   const newState = JSON.parse(JSON.stringify(state));
-  if (action.qty == 0) {
+  if (action.qty === 0) {
     newState.items.splice(action.index, 1);
   } else {
     newState.items[action.index].qty += action.qty;
-    if (newState.items[action.index].qty == 0) {
+    if (newState.items[action.index].qty === 0) {
       newState.items.splice(action.index, 1);
     }
   }

@@ -347,7 +347,7 @@ class CheckoutScreen extends React.Component {
         });
     };
 
-    if (this.state.deliveryoptions.value == 'Доставка') {
+    if (this.state.deliveryoptions.value === 'Доставка') {
       if (
         !this.state.nameClient ||
         !this.state.phoneClient ||
@@ -366,7 +366,7 @@ class CheckoutScreen extends React.Component {
           this.setState({phonestatuserror: false, phonestatussuccess: true});
         }
         if (!this.state.adressClient) {
-          if (this.state.deliveryoptions.value == 'Доставка') {
+          if (this.state.deliveryoptions.value === 'Доставка') {
             this.setState({
               adressstatuserror: true,
               adressstatussuccess: false,
@@ -385,7 +385,7 @@ class CheckoutScreen extends React.Component {
         setOrderwithConnectionChecking();
       }
     }
-    if (this.state.deliveryoptions.value == 'Самовывоз') {
+    if (this.state.deliveryoptions.value === 'Самовывоз') {
       if (!this.state.nameClient || !this.state.phoneClient) {
         if (!this.state.nameClient) {
           this.setState({namestatuserror: true, namestatussuccess: false});
@@ -467,7 +467,7 @@ class CheckoutScreen extends React.Component {
           </Body>
           <Right />
         </Header>
-        {this.state.loading == false ? (
+        {this.state.loading === false ? (
           <Content style={styles.content}>
             <View style={{marginTop: 10, padding: 5, backgroundColor: 'white'}}>
               <SegmentedControls
@@ -584,7 +584,7 @@ class CheckoutScreen extends React.Component {
                 )}
                 {this.state.phonestatuserror && <Icon name="close-circle" />}
               </Item>
-              {this.state.deliveryoptions.value == 'Доставка' && (
+              {this.state.deliveryoptions.value === 'Доставка' && (
                 <Item
                   error={this.state.adressstatuserror}
                   success={this.state.adressstatussuccess}
@@ -624,7 +624,7 @@ class CheckoutScreen extends React.Component {
             </View>
           </Content>
         )}
-        {this.state.loading == false && (
+        {this.state.loading === false && (
           <Footer style={styles.buttoncontinueblock}>
             <Button
               disabled={this.state.btndisabled}

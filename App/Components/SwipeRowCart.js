@@ -210,7 +210,7 @@ export default class SwipeRowCart extends React.Component {
   onRowPress() {
     const {isMoving, position} = this.state;
 
-    if (!isMoving && position == 1) {
+    if (!isMoving && position === 1) {
       this.interactableElem.snapTo({index: 2});
     } else {
       this.interactableElem.snapTo({index: 1});
@@ -224,6 +224,5 @@ export default class SwipeRowCart extends React.Component {
   }
   onStopMoving() {
     this.setState({isMoving: false});
-    const element = this.interactableElem;
   }
 }
