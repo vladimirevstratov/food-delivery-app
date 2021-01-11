@@ -120,7 +120,6 @@ const CartScreen = (props) => {
             data={items}
             renderItem={({item, index}) => (
               <SwipeRowCart
-                onRef={(ref) => (this.child = ref)}
                 damping={cartState.damping}
                 key={item.id}
                 tension={cartState.tension}
@@ -138,7 +137,7 @@ const CartScreen = (props) => {
                     <View
                       style={
                         styles.button0
-                      } /* onPress={() => this.onPressSnapTo()}*/
+                      }
                     >
                       <Text style={styles.buttontext0}>
                         {item.qty} x {item.price} р

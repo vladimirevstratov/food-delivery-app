@@ -605,7 +605,6 @@ const CheckoutScreen = (props) => {
               {checkoutState.namestatuserror && <Icon name="close-circle" />}
             </Item>
             <Item
-              ref={(elem) => (this.iteminput = elem)}
               error={checkoutState.phonestatuserror}
               success={checkoutState.phonestatussuccess}
               style={styles.iteminput}>
