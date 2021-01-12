@@ -1,5 +1,5 @@
-import React from 'react';
-import {connect} from 'react-redux';
+import React, {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import Actions from '../Actions/Creators';
 import firebase from '@react-native-firebase/database';
 import {BackHandler, View, Alert, ActivityIndicator} from 'react-native';
@@ -25,44 +25,30 @@ import Moment from 'moment';
 import styles from './Styles/CheckoutScreenStyles';
 import {Colors} from '../Themes/';
 
-class CheckoutScreen extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      nameClient: '',
-      phoneClient: '',
-      adressClient: '',
-      commentClient: '',
-      orderstatus: 'Новый',
-      products: this.props.items,
-      deliveryoptions: {label: 'Доставка', value: 'Доставка'},
-      paymentoptions: {label: 'Наличными', value: 'Наличными'},
-      persons: 1,
-      showToast: false,
-      btndisabled: false,
-      loading: false,
-    };
-  }
+const CheckoutScreen = (props) => {
+  const {items} = useSelector((state) => state.cart);
 
-  componentDidMount() {
-    //this.iteminput.addEventListener('iteminputChecking', this.checknameInput);
-  }
+  const [checkoutState, setCheckoutState] = useState({
+    nameClient: '',
+    phoneClient: '',
+    adressClient: '',
+    commentClient: '',
+    orderstatus: 'Новый',
+    products: items,
+    deliveryoptions: {label: 'Доставка', value: 'Доставка'},
+    paymentoptions: {label: 'Наличными', value: 'Наличными'},
+    persons: 1,
+    showToast: false,
+    btndisabled: false,
+    loading: false,
+  });
 
-  componentWillMount() {
-    BackHandler.addEventListener('hardwareBackPress', this.backPressed);
-  }
+  const dispatch = useDispatch();
 
-  componentWillUnmount() {
-    BackHandler.removeEventListener('hardwareBackPress', this.backPressed);
-  }
-
-  backPressed = () => {
-    this.gobackwithAlert();
-    return true;
-  };
+  const clearCart = () => dispatch(Actions.clearCart());
 
   //Возврат назад с проверкой и Alert
-  gobackwithAlert() {
+  const gobackwithAlert = () => {
     Alert.alert(
       'Вы не оформили заказ до конца',
       'Введенные данные очистятся при возврате назад.',
@@ -71,14 +57,19 @@ class CheckoutScreen extends React.Component {
           text: 'Оформить заказ',
           onPress: () => console.log('Продолжение оформления заказа'),
         },
-        {text: 'Выйти', onPress: () => this.props.navigation.goBack()},
+        {text: 'Выйти', onPress: () => props.navigation.goBack()},
       ],
       {cancelable: false},
     );
-  }
+  };
+
+  const backPressed = () => {
+    gobackwithAlert();
+    return true;
+  };
 
   //Отправка заказа в базу
-  addOrder = (props) => {
+  const addOrder = () => {
     const resetAction = NavigationActions.reset({
       index: 0,
       actions: [NavigationActions.navigate({routeName: 'NavigationDrawer'})],
@@ -88,9 +79,9 @@ class CheckoutScreen extends React.Component {
       const disablebtnfunction = () => {
         //Отключение кнопки продолжить
         return new Promise((resolve, reject) => {
-          this.setState({btndisabled: true}, () => {
-            resolve();
-          });
+          setCheckoutState({...checkoutState, btndisabled: true});
+
+          resolve();
         });
       };
 
@@ -98,33 +89,36 @@ class CheckoutScreen extends React.Component {
         //Отключение кнопки продолжить
         return new Promise((resolve, reject) => {
           if (
-            !this.state.namestatussuccess ||
-            !this.state.phonestatussuccess ||
-            !this.state.adressstatussuccess
+            !checkoutState.namestatussuccess ||
+            !checkoutState.phonestatussuccess ||
+            !checkoutState.adressstatussuccess
           ) {
-            if (!this.state.namestatussuccess) {
-              this.setState(
-                {namestatuserror: false, namestatussuccess: true},
-                () => {
-                  resolve();
-                },
-              );
+            if (!checkoutState.namestatussuccess) {
+              setCheckoutState({
+                ...checkoutState,
+                namestatuserror: false,
+                namestatussuccess: true,
+              });
+
+              resolve();
             }
-            if (!this.state.phonestatussuccess) {
-              this.setState(
-                {phonestatuserror: false, phonestatussuccess: true},
-                () => {
-                  resolve();
-                },
-              );
+            if (!checkoutState.phonestatussuccess) {
+              setCheckoutState({
+                ...checkoutState,
+                phonestatuserror: false,
+                phonestatussuccess: true,
+              });
+
+              resolve();
             }
-            if (!this.state.adressstatussuccess) {
-              this.setState(
-                {adressstatuserror: false, adressstatussuccess: true},
-                () => {
-                  resolve();
-                },
-              );
+            if (!checkoutState.adressstatussuccess) {
+              setCheckoutState({
+                ...checkoutState,
+                adressstatuserror: false,
+                adressstatussuccess: true,
+              });
+
+              resolve();
             }
           } else {
             resolve();
@@ -145,7 +139,7 @@ class CheckoutScreen extends React.Component {
                   position: 'top',
                   duration: 2000,
                 });
-                this.setState({btndisabled: false});
+                setCheckoutState({...checkoutState, btndisabled: false});
                 reject('offline');
               }
             })
@@ -155,9 +149,9 @@ class CheckoutScreen extends React.Component {
                 position: 'top',
                 duration: 2000,
               });
-              this.setState({btndisabled: false}, () => {
-                reject('no internet connection');
-              });
+              setCheckoutState({...checkoutState, btndisabled: false});
+
+              reject('no internet connection');
             });
         });
       };
@@ -165,9 +159,9 @@ class CheckoutScreen extends React.Component {
       const loadingActivitytrue = () => {
         //Отключение кнопки продолжить
         return new Promise((resolve, reject) => {
-          this.setState({loading: true}, () => {
-            resolve();
-          });
+          setCheckoutState({...checkoutState, loading: true});
+
+          resolve();
         });
       };
 
@@ -177,7 +171,7 @@ class CheckoutScreen extends React.Component {
           const newRef = firebase().ref('Заказы').push().key;
           const dateandtime = new Date();
           const productsarray = [];
-          const products = this.state.products;
+          const products = checkoutState.products;
           products.map((product, i) => {
             productsarray.push({
               id: product.id,
@@ -188,27 +182,27 @@ class CheckoutScreen extends React.Component {
           });
           let data = {
             id: Moment(dateandtime).format('x').slice(-5), //newRef.toString().slice(-4),
-            имя: this.state.nameClient,
-            телефон: this.state.phoneClient,
-            доставка: this.state.deliveryoptions.value,
-            оплата: this.state.paymentoptions.value,
-            адрес: this.state.adressClient,
-            персон: this.state.persons,
-            комментарий: this.state.commentClient,
-            статус: this.state.orderstatus,
+            имя: checkoutState.nameClient,
+            телефон: checkoutState.phoneClient,
+            доставка: checkoutState.deliveryoptions.value,
+            оплата: checkoutState.paymentoptions.value,
+            адрес: checkoutState.adressClient,
+            персон: checkoutState.persons,
+            комментарий: checkoutState.commentClient,
+            статус: checkoutState.orderstatus,
             создано: Moment(dateandtime).format('YYYY-MM-DD HH:mm'),
             продукты: productsarray,
-            итог: this.props.navigation.state.params.total,
-            скидка: this.props.navigation.state.params.skidka,
+            итог: props.navigation.state.params.total,
+            скидка: props.navigation.state.params.skidka,
           };
           firebase()
             .ref('Заказы/' + 'order' + newRef)
             .set(data)
             .then(() => {
               console.log('Order written');
-              this.setState({orderid: data.id}, () => {
-                resolve();
-              });
+              setCheckoutState({...checkoutState, orderid: data.id});
+
+              resolve();
             });
         });
       };
@@ -219,18 +213,18 @@ class CheckoutScreen extends React.Component {
       const sendGridEmail = (/*,cart,shipping,subTotal,callback*/) => {
         return new Promise((resolve, reject) => {
           let message =
-            '\nЗаказ №' + this.state.orderid + '\n\n=============\n';
-          message += 'Имя: ' + this.state.nameClient + '\n';
-          message += 'Телефон: ' + this.state.phoneClient + '\n';
-          message += 'Доставка: ' + this.state.deliveryoptions.value + '\n';
-          message += 'Оплата: ' + this.state.paymentoptions.value + '\n';
-          message += 'Адрес: ' + this.state.adressClient + '\n';
-          message += 'Персон: ' + this.state.persons + '\n';
-          message += 'Комментарий: ' + this.state.commentClient + '\n';
-          message += 'Статус: ' + this.state.orderstatus;
+            '\nЗаказ №' + checkoutState.orderid + '\n\n=============\n';
+          message += 'Имя: ' + checkoutState.nameClient + '\n';
+          message += 'Телефон: ' + checkoutState.phoneClient + '\n';
+          message += 'Доставка: ' + checkoutState.deliveryoptions.value + '\n';
+          message += 'Оплата: ' + checkoutState.paymentoptions.value + '\n';
+          message += 'Адрес: ' + checkoutState.adressClient + '\n';
+          message += 'Персон: ' + checkoutState.persons + '\n';
+          message += 'Комментарий: ' + checkoutState.commentClient + '\n';
+          message += 'Статус: ' + checkoutState.orderstatus;
           message += '\n=============\n';
           message += '\n';
-          let products = this.state.products;
+          let products = checkoutState.products;
           //Iterate the messages
           products.map((product, i) => {
             message += product.name + '\n';
@@ -239,11 +233,9 @@ class CheckoutScreen extends React.Component {
             message += '-------------\n';
           });
           message +=
-            'Итог: ' + this.props.navigation.state.params.preTotal + 'р' + '\n';
+            'Итог: ' + props.navigation.state.params.preTotal + 'р' + '\n';
           message +=
-            'С учетом скидки: ' +
-            this.props.navigation.state.params.total +
-            'р';
+            'С учетом скидки: ' + props.navigation.state.params.total + 'р';
 
           fetch('https://api.sendgrid.com/v3/mail/send', {
             method: 'POST',
@@ -261,11 +253,11 @@ class CheckoutScreen extends React.Component {
                   ],
                   subject:
                     'Новый заказ №' +
-                    this.state.orderid +
+                    checkoutState.orderid +
                     ' от ' +
-                    this.state.nameClient +
+                    checkoutState.nameClient +
                     ' ' +
-                    this.state.phoneClient,
+                    checkoutState.phoneClient,
                 },
               ],
               from: {
@@ -292,10 +284,10 @@ class CheckoutScreen extends React.Component {
       const loadingActivityfalse = () => {
         //Отключение кнопки продолжить
         return new Promise((resolve, reject) => {
-          this.setState({loading: false}, () => {
-            console.log('loading false');
-            resolve();
-          });
+          setCheckoutState({...checkoutState, loading: false});
+
+          console.log('loading false');
+          resolve();
         });
       };
 
@@ -303,13 +295,13 @@ class CheckoutScreen extends React.Component {
         //Очистка корзины и навигация на главную страницу
         return new Promise((resolve, reject) => {
           Alert.alert(
-            'Номер Вашего заказа: ' + this.state.orderid,
+            'Номер Вашего заказа: ' + checkoutState.orderid,
             'Перезвоним Вам, для уточнения времени и проверки заказа.',
             [
               {
                 text: 'OK',
                 onPress: () => {
-                  props.clearCart();
+                  clearCart();
                   props.navigation.dispatch(resetAction);
                   resolve();
                 },
@@ -347,57 +339,95 @@ class CheckoutScreen extends React.Component {
         });
     };
 
-    if (this.state.deliveryoptions.value === 'Доставка') {
+    if (checkoutState.deliveryoptions.value === 'Доставка') {
       if (
-        !this.state.nameClient ||
-        !this.state.phoneClient ||
-        !this.state.adressClient
+        !checkoutState.nameClient ||
+        !checkoutState.phoneClient ||
+        !checkoutState.adressClient
       ) {
-        if (!this.state.nameClient) {
-          this.setState({namestatuserror: true, namestatussuccess: false});
+        if (!checkoutState.nameClient) {
+          setCheckoutState({
+            ...checkoutState,
+            namestatuserror: true,
+            namestatussuccess: false,
+          });
           //console.log('Поле с номером телефона не заполнено');
         } else {
-          this.setState({namestatuserror: false, namestatussuccess: true});
+          setCheckoutState({
+            ...checkoutState,
+            namestatuserror: false,
+            namestatussuccess: true,
+          });
         }
-        if (!this.state.phoneClient) {
-          this.setState({phonestatuserror: true, phonestatussuccess: false});
+        if (!checkoutState.phoneClient) {
+          setCheckoutState({
+            ...checkoutState,
+            phonestatuserror: true,
+            phonestatussuccess: false,
+          });
           //console.log('Поле с именем не заполнено');
         } else {
-          this.setState({phonestatuserror: false, phonestatussuccess: true});
+          setCheckoutState({
+            ...checkoutState,
+            phonestatuserror: false,
+            phonestatussuccess: true,
+          });
         }
-        if (!this.state.adressClient) {
-          if (this.state.deliveryoptions.value === 'Доставка') {
-            this.setState({
+        if (!checkoutState.adressClient) {
+          if (checkoutState.deliveryoptions.value === 'Доставка') {
+            setCheckoutState({
+              ...checkoutState,
               adressstatuserror: true,
               adressstatussuccess: false,
             });
             //console.log('Поле с адресом доставки не заполнено');
           } else {
-            this.setState({
+            setCheckoutState({
+              ...checkoutState,
               adressstatuserror: false,
               adressstatussuccess: true,
             });
           }
         } else {
-          this.setState({adressstatuserror: false, adressstatussuccess: true});
+          setCheckoutState({
+            ...checkoutState,
+            adressstatuserror: false,
+            adressstatussuccess: true,
+          });
         }
       } else {
         setOrderwithConnectionChecking();
       }
     }
-    if (this.state.deliveryoptions.value === 'Самовывоз') {
-      if (!this.state.nameClient || !this.state.phoneClient) {
-        if (!this.state.nameClient) {
-          this.setState({namestatuserror: true, namestatussuccess: false});
+    if (checkoutState.deliveryoptions.value === 'Самовывоз') {
+      if (!checkoutState.nameClient || !checkoutState.phoneClient) {
+        if (!checkoutState.nameClient) {
+          setCheckoutState({
+            ...checkoutState,
+            namestatuserror: true,
+            namestatussuccess: false,
+          });
           //console.log('Поле с номером телефона не заполнено');
         } else {
-          this.setState({namestatuserror: false, namestatussuccess: true});
+          setCheckoutState({
+            ...checkoutState,
+            namestatuserror: false,
+            namestatussuccess: true,
+          });
         }
-        if (!this.state.phoneClient) {
-          this.setState({phonestatuserror: true, phonestatussuccess: false});
+        if (!checkoutState.phoneClient) {
+          setCheckoutState({
+            ...checkoutState,
+            phonestatuserror: true,
+            phonestatussuccess: false,
+          });
           //console.log('Поле с именем не заполнено');
         } else {
-          this.setState({phonestatuserror: false, phonestatussuccess: true});
+          setCheckoutState({
+            ...checkoutState,
+            phonestatuserror: false,
+            phonestatussuccess: true,
+          });
         }
       } else {
         setOrderwithConnectionChecking();
@@ -406,249 +436,248 @@ class CheckoutScreen extends React.Component {
   };
 
   //Увеличение количества персон
-  increment() {
-    if (this.state.persons < 99) {
-      this.setState((prevState) => ({
+  const increment = () => {
+    if (checkoutState.persons < 99) {
+      setCheckoutState((prevState) => ({
+        ...prevState,
         persons: prevState.persons + 1,
       }));
     }
-  }
+  };
 
   //Уменьшение количества персон
-  decrement() {
-    if (this.state.persons > 1) {
-      this.setState((prevState) => ({
+  const decrement = () => {
+    if (checkoutState.persons > 1) {
+      setCheckoutState((prevState) => ({
+        ...prevState,
         persons: prevState.persons - 1,
       }));
     }
+  };
+
+  //Значения кнопок выбора опций
+  const deliveryoptions = [
+    {label: 'Доставка', value: 'Доставка'},
+    {label: 'Самовывоз', value: 'Самовывоз'},
+  ];
+
+  const paymentoptions = [
+    {label: 'Картой', value: 'Картой'},
+    {label: 'Наличными', value: 'Наличными'},
+  ];
+
+  //Запись значений в состояние после клика на кнопку выбора опций
+  function setDeliveryOption(option) {
+    setCheckoutState({
+      ...checkoutState,
+      deliveryoptions: option,
+      adressstatuserror: false,
+      adressstatussuccess: false,
+    });
   }
 
-  render() {
-    //console.log(this.state);
+  function setPaymentOption(option) {
+    setCheckoutState({
+      ...checkoutState,
+      paymentoptions: option,
+    });
+  }
 
-    //Значения кнопок выбора опций
-    const deliveryoptions = [
-      {label: 'Доставка', value: 'Доставка'},
-      {label: 'Самовывоз', value: 'Самовывоз'},
-    ];
+  useEffect(() => {
+    BackHandler.addEventListener('hardwareBackPress', backPressed);
 
-    const paymentoptions = [
-      {label: 'Картой', value: 'Картой'},
-      {label: 'Наличными', value: 'Наличными'},
-    ];
+    return () => {
+      BackHandler.removeEventListener('hardwareBackPress', backPressed);
+    };
+    /* eslint-disable-next-line */
+  }, []);
 
-    //Запись значений в состояние после клика на кнопку выбора опций
-    function setDeliveryOption(option) {
-      this.setState({
-        deliveryoptions: option,
-        adressstatuserror: false,
-        adressstatussuccess: false,
-      });
-    }
+  return (
+    <Container>
+      <Header
+        style={{backgroundColor: '#ffffff'}}
+        androidStatusBarColor={Colors.black}>
+        <Left>
+          <Button transparent onPress={() => gobackwithAlert()}>
+            <Icon name="arrow-back" style={{color: '#34909F'}} />
+          </Button>
+        </Left>
+        <Body style={{flex: 3}}>
+          <Title style={{color: '#222222'}}>ОФОРМЛЕНИЕ ЗАКАЗА</Title>
+        </Body>
+        <Right />
+      </Header>
+      {checkoutState.loading === false ? (
+        <Content style={styles.content}>
+          <View style={{marginTop: 10, padding: 5, backgroundColor: 'white'}}>
+            <SegmentedControls
+              tint={'#34909F'}
+              selectedTint={'white'}
+              backTint={'#3D3D3D'}
+              optionStyle={{
+                fontSize: 20,
+                fontWeight: 'normal',
+                fontFamily: 'Avenir-Book',
+                paddingTop: 7,
+              }}
+              containerStyle={{
+                marginLeft: 10,
+                marginRight: 10,
+                height: 57,
+              }}
+              options={deliveryoptions}
+              onSelection={setDeliveryOption}
+              selectedOption={checkoutState.deliveryoptions}
+              extractText={(option) => option.label}
+              testOptionEqual={(a, b) => {
+                if (!a || !b) {
+                  return false;
+                }
+                return a.label === b.label;
+              }}
+            />
+          </View>
+          <View style={{marginTop: 0, padding: 5, backgroundColor: 'white'}}>
+            <SegmentedControls
+              tint={'#34909F'}
+              selectedTint={'white'}
+              backTint={'#3D3D3D'}
+              optionStyle={{
+                fontSize: 20,
+                fontWeight: 'normal',
+                fontFamily: 'Avenir-Book',
+                paddingTop: 7,
+              }}
+              containerStyle={{
+                marginLeft: 10,
+                marginRight: 10,
+                height: 57,
+                alignSelf: 'center',
+              }}
+              options={paymentoptions}
+              onSelection={setPaymentOption}
+              selectedOption={checkoutState.paymentoptions}
+              extractText={(option) => option.label}
+              testOptionEqual={(a, b) => {
+                if (!a || !b) {
+                  return false;
+                }
+                return a.label === b.label;
+              }}
+            />
+          </View>
 
-    function setPaymentOption(option) {
-      this.setState({
-        paymentoptions: option,
-      });
-    }
-
-    return (
-      <Container>
-        <Header
-          style={{backgroundColor: '#ffffff'}}
-          androidStatusBarColor={Colors.black}>
-          <Left>
-            <Button transparent onPress={() => this.gobackwithAlert()}>
-              <Icon name="arrow-back" style={{color: '#34909F'}} />
-            </Button>
-          </Left>
-          <Body style={{flex: 3}}>
-            <Title style={{color: '#222222'}}>ОФОРМЛЕНИЕ ЗАКАЗА</Title>
-          </Body>
-          <Right />
-        </Header>
-        {this.state.loading === false ? (
-          <Content style={styles.content}>
-            <View style={{marginTop: 10, padding: 5, backgroundColor: 'white'}}>
-              <SegmentedControls
-                tint={'#34909F'}
-                selectedTint={'white'}
-                backTint={'#3D3D3D'}
-                optionStyle={{
-                  fontSize: 20,
-                  fontWeight: 'normal',
-                  fontFamily: 'Avenir-Book',
-                  paddingTop: 7,
-                }}
-                containerStyle={{
-                  marginLeft: 10,
-                  marginRight: 10,
-                  height: 57,
-                }}
-                options={deliveryoptions}
-                onSelection={setDeliveryOption.bind(this)}
-                selectedOption={this.state.deliveryoptions}
-                extractText={(option) => option.label}
-                testOptionEqual={(a, b) => {
-                  if (!a || !b) {
-                    return false;
-                  }
-                  return a.label === b.label;
-                }}
-              />
-            </View>
-            <View style={{marginTop: 0, padding: 5, backgroundColor: 'white'}}>
-              <SegmentedControls
-                tint={'#34909F'}
-                selectedTint={'white'}
-                backTint={'#3D3D3D'}
-                optionStyle={{
-                  fontSize: 20,
-                  fontWeight: 'normal',
-                  fontFamily: 'Avenir-Book',
-                  paddingTop: 7,
-                }}
-                containerStyle={{
-                  marginLeft: 10,
-                  marginRight: 10,
-                  height: 57,
-                  alignSelf: 'center',
-                }}
-                options={paymentoptions}
-                onSelection={setPaymentOption.bind(this)}
-                selectedOption={this.state.paymentoptions}
-                extractText={(option) => option.label}
-                testOptionEqual={(a, b) => {
-                  if (!a || !b) {
-                    return false;
-                  }
-                  return a.label === b.label;
-                }}
-              />
-            </View>
-
-            <View style={styles.inputblock}>
-              <View style={styles.btninputblock}>
-                <Item disabled style={styles.iteminput1}>
-                  <Icon active name="people" style={styles.inputicon} />
-                  <Input
-                    disabled
-                    placeholder={'Персон: ' + this.state.persons}
-                    style={styles.input0persons}
-                  />
-                </Item>
-                <View style={styles.btnblock}>
-                  <Button
-                    style={styles.btnminus}
-                    onPress={() => this.decrement()}>
-                    <Text style={styles.btnminustext}>-</Text>
-                  </Button>
-                  <Button
-                    style={styles.btnplus}
-                    onPress={() => this.increment()}>
-                    <Text style={styles.btnplustext}>+</Text>
-                  </Button>
-                </View>
+          <View style={styles.inputblock}>
+            <View style={styles.btninputblock}>
+              <Item disabled style={styles.iteminput1}>
+                <Icon active name="people" style={styles.inputicon} />
+                <Input
+                  disabled
+                  placeholder={'Персон: ' + checkoutState.persons}
+                  style={styles.input0persons}
+                />
+              </Item>
+              <View style={styles.btnblock}>
+                <Button style={styles.btnminus} onPress={() => decrement()}>
+                  <Text style={styles.btnminustext}>-</Text>
+                </Button>
+                <Button style={styles.btnplus} onPress={() => increment()}>
+                  <Text style={styles.btnplustext}>+</Text>
+                </Button>
               </View>
-              <Item
-                error={this.state.namestatuserror}
-                success={this.state.namestatussuccess}
-                style={styles.iteminput}>
-                <Icon active name="person" style={styles.inputicon} />
-                <Input
-                  placeholder="Введите ваше имя"
-                  style={styles.input0}
-                  onChangeText={(nameClient) => this.setState({nameClient})}
-                  maxLength={50}
-                />
-                {this.state.namestatussuccess && (
-                  <Icon name="checkmark-circle" />
-                )}
-                {this.state.namestatuserror && <Icon name="close-circle" />}
-              </Item>
-              <Item
-                ref={(elem) => (this.iteminput = elem)}
-                error={this.state.phonestatuserror}
-                success={this.state.phonestatussuccess}
-                style={styles.iteminput}>
-                <Icon active name="call" style={styles.inputicon} />
-                <Input
-                  placeholder="Введите ваш телефон"
-                  style={styles.input0}
-                  onChangeText={(phoneClient) => this.setState({phoneClient})}
-                  maxLength={11}
-                  keyboardType={'numeric'}
-                />
-                {this.state.phonestatussuccess && (
-                  <Icon name="checkmark-circle" />
-                )}
-                {this.state.phonestatuserror && <Icon name="close-circle" />}
-              </Item>
-              {this.state.deliveryoptions.value === 'Доставка' && (
-                <Item
-                  error={this.state.adressstatuserror}
-                  success={this.state.adressstatussuccess}
-                  style={styles.iteminput}>
-                  <Icon active name="pin" style={styles.inputicon} />
-                  <Input
-                    placeholder="Адрес доставки"
-                    style={styles.input0}
-                    onChangeText={(adressClient) =>
-                      this.setState({adressClient})
-                    }
-                    maxLength={100}
-                  />
-                  {this.state.adressstatussuccess && (
-                    <Icon name="checkmark-circle" />
-                  )}
-                  {this.state.adressstatuserror && <Icon name="close-circle" />}
-                </Item>
+            </View>
+            <Item
+              error={checkoutState.namestatuserror}
+              success={checkoutState.namestatussuccess}
+              style={styles.iteminput}>
+              <Icon active name="person" style={styles.inputicon} />
+              <Input
+                placeholder="Введите ваше имя"
+                style={styles.input0}
+                onChangeText={(nameClient) =>
+                  setCheckoutState({...checkoutState, nameClient})
+                }
+                maxLength={50}
+              />
+              {checkoutState.namestatussuccess && (
+                <Icon name="checkmark-circle" />
               )}
-              <Item style={styles.iteminput}>
-                <Icon active name="md-text" style={styles.inputicon} />
+              {checkoutState.namestatuserror && <Icon name="close-circle" />}
+            </Item>
+            <Item
+              error={checkoutState.phonestatuserror}
+              success={checkoutState.phonestatussuccess}
+              style={styles.iteminput}>
+              <Icon active name="call" style={styles.inputicon} />
+              <Input
+                placeholder="Введите ваш телефон"
+                style={styles.input0}
+                onChangeText={(phoneClient) =>
+                  setCheckoutState({...checkoutState, phoneClient})
+                }
+                maxLength={11}
+                keyboardType={'numeric'}
+              />
+              {checkoutState.phonestatussuccess && (
+                <Icon name="checkmark-circle" />
+              )}
+              {checkoutState.phonestatuserror && <Icon name="close-circle" />}
+            </Item>
+            {checkoutState.deliveryoptions.value === 'Доставка' && (
+              <Item
+                error={checkoutState.adressstatuserror}
+                success={checkoutState.adressstatussuccess}
+                style={styles.iteminput}>
+                <Icon active name="pin" style={styles.inputicon} />
                 <Input
-                  placeholder="Комментарий (не обязательно)"
+                  placeholder="Адрес доставки"
                   style={styles.input0}
-                  onChangeText={(commentClient) =>
-                    this.setState({commentClient})
+                  onChangeText={(adressClient) =>
+                    setCheckoutState({...checkoutState, adressClient})
                   }
-                  maxLength={400}
+                  maxLength={100}
                 />
+                {checkoutState.adressstatussuccess && (
+                  <Icon name="checkmark-circle" />
+                )}
+                {checkoutState.adressstatuserror && (
+                  <Icon name="close-circle" />
+                )}
               </Item>
-            </View>
-          </Content>
-        ) : (
-          <Content style={styles.content}>
-            <View style={styles.loadingview}>
-              <ActivityIndicator animating size="large" color={Colors.blue0} />
-            </View>
-          </Content>
-        )}
-        {this.state.loading === false && (
-          <Footer style={styles.buttoncontinueblock}>
-            <Button
-              disabled={this.state.btndisabled}
-              full
-              style={styles.buttoncontinue}
-              onPress={() => this.addOrder(this.props)}>
-              <Text style={styles.btncontinuetext}>ПРОДОЛЖИТЬ</Text>
-            </Button>
-          </Footer>
-        )}
-      </Container>
-    );
-  }
-}
-const mapStateToProps = (state) => {
-  return {
-    items: state.cart.items,
-  };
+            )}
+            <Item style={styles.iteminput}>
+              <Icon active name="md-text" style={styles.inputicon} />
+              <Input
+                placeholder="Комментарий (не обязательно)"
+                style={styles.input0}
+                onChangeText={(commentClient) =>
+                  setCheckoutState({...checkoutState, commentClient})
+                }
+                maxLength={400}
+              />
+            </Item>
+          </View>
+        </Content>
+      ) : (
+        <Content style={styles.content}>
+          <View style={styles.loadingview}>
+            <ActivityIndicator animating size="large" color={Colors.blue0} />
+          </View>
+        </Content>
+      )}
+      {checkoutState.loading === false && (
+        <Footer style={styles.buttoncontinueblock}>
+          <Button
+            disabled={checkoutState.btndisabled}
+            full
+            style={styles.buttoncontinue}
+            onPress={() => addOrder()}>
+            <Text style={styles.btncontinuetext}>ПРОДОЛЖИТЬ</Text>
+          </Button>
+        </Footer>
+      )}
+    </Container>
+  );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    clearCart: () => dispatch(Actions.clearCart()),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(CheckoutScreen);
+export default CheckoutScreen;

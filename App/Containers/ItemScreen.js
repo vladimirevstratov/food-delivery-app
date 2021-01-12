@@ -1,5 +1,5 @@
-import React from 'react';
-import {connect} from 'react-redux';
+import React, {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import Actions from '../Actions/Creators';
 import {Image, BackHandler} from 'react-native';
 import {
@@ -19,179 +19,165 @@ import {
 import CartIconHeader from '../Components/CartIconHeader';
 import {Colors} from '../Themes/';
 import {Col, Row, Grid} from 'react-native-easy-grid';
-
-// Styles
 import styles from './Styles/ItemScreenStyles';
 
-class ItemScreen extends React.Component {
-  constructor(props) {
-    super(props);
+const ItemScreen = (props) => {
+  const [itemState] = useState({
+    loading: false,
+    item: props.navigation.state.params.data1,
+  });
 
-    this.state = {
-      loading: false,
-      item: this.props.navigation.state.params.data1,
-    };
-  }
+  const {items} = useSelector((state) => state.cart);
 
-  componentWillMount() {
-    BackHandler.addEventListener('hardwareBackPress', this.backPressed);
-  }
+  const dispatch = useDispatch();
 
-  componentWillUnmount() {
-    BackHandler.removeEventListener('hardwareBackPress', this.backPressed);
-  }
-
-  backPressed = () => {
-    this.props.navigation.goBack();
+  const backPressed = () => {
+    props.navigation.goBack();
     return true;
   };
 
-  prepareToAddToCart() {
+  const prepareToAddToCart = () => {
     const newItem = {
       qty: 1,
-      id: this.state.item.id,
-      name: this.state.item.name,
-      description: this.state.item.desc,
-      photo: this.state.item.photo,
-      price: this.state.item.price,
+      id: itemState.item.id,
+      name: itemState.item.name,
+      description: itemState.item.desc,
+      photo: itemState.item.photo,
+      price: itemState.item.price,
     };
-    this.props.addCart(newItem);
-  }
 
-  render() {
-    return (
-      <Container>
-        <Header
-          style={{backgroundColor: '#ffffff'}}
-          androidStatusBarColor={Colors.black}>
-          <Left>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
-              <Icon name="arrow-back" style={{color: '#34909F'}} />
-            </Button>
-          </Left>
-          <Body style={{flex: 3}}>
-            <Title style={{color: '#222222'}}>
-              {this.state.item.name.toUpperCase()}
-            </Title>
-          </Body>
-          <Right>
-            <CartIconHeader
-              items={this.props.items}
-              onCartPress={() => this.props.navigation.navigate('CartScreen')}
-            />
-          </Right>
-        </Header>
+    dispatch(Actions.addCart(newItem));
+  };
 
-        <Content /*padder*/ style={styles.content}>
-          <Grid style={{backgroundColor: '#fcfcfc'}}>
-            <Col
+  useEffect(() => {
+    BackHandler.addEventListener('hardwareBackPress', backPressed);
+
+    return () =>
+      BackHandler.removeEventListener('hardwareBackPress', backPressed);
+
+    /* eslint-disable-next-line */
+  }, []);
+
+  return (
+    <Container>
+      <Header
+        style={{backgroundColor: '#ffffff'}}
+        androidStatusBarColor={Colors.black}>
+        <Left>
+          <Button transparent onPress={() => props.navigation.goBack()}>
+            <Icon name="arrow-back" style={{color: '#34909F'}} />
+          </Button>
+        </Left>
+        <Body style={{flex: 3}}>
+          <Title style={{color: '#222222'}}>
+            {itemState.item.name.toUpperCase()}
+          </Title>
+        </Body>
+        <Right>
+          <CartIconHeader
+            items={items}
+            onCartPress={() => props.navigation.navigate('CartScreen')}
+          />
+        </Right>
+      </Header>
+
+      <Content style={styles.content}>
+        <Grid style={{backgroundColor: '#fcfcfc'}}>
+          <Col
+            style={{
+              height: 320,
+              borderBottomWidth: 3,
+              borderBottomColor: '#f4f4f4',
+              paddingTop: 15,
+            }}>
+            <Row
               style={{
-                height: 320,
-                borderBottomWidth: 3,
-                borderBottomColor: '#f4f4f4',
-                paddingTop: 15,
-              }}>
-              <Row
-                style={{
-                  height: 221,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                <Image
-                  style={{width: 220, height: 220, borderRadius: 110}}
-                  source={{uri: this.state.item.photo}}
-                />
-              </Row>
-              <Row
-                style={{
-                  height: 60,
-                  paddingTop: 15,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                <Text style={{fontSize: 37, color: '#0F0F0F'}}>
-                  {this.state.item.name}
-                </Text>
-              </Row>
-            </Col>
-          </Grid>
-          <Grid>
-            <Col
-              style={{
-                backgroundColor: '#ffffff',
-                height: 160,
+                height: 221,
+                justifyContent: 'center',
                 alignItems: 'center',
               }}>
-              <Row
+              <Image
+                style={{width: 220, height: 220, borderRadius: 110}}
+                source={{uri: itemState.item.photo}}
+              />
+            </Row>
+            <Row
+              style={{
+                height: 60,
+                paddingTop: 15,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <Text style={{fontSize: 37, color: '#0F0F0F'}}>
+                {itemState.item.name}
+              </Text>
+            </Row>
+          </Col>
+        </Grid>
+        <Grid>
+          <Col
+            style={{
+              backgroundColor: '#ffffff',
+              height: 160,
+              alignItems: 'center',
+            }}>
+            <Row
+              style={{
+                height: 85,
+                paddingTop: 15,
+                width: 280,
+                justifyContent: 'center',
+              }}>
+              <Text
+                style={{fontSize: 16, color: '#8F8E8E', textAlign: 'center'}}>
+                {itemState.item.desc}
+              </Text>
+            </Row>
+            <Row
+              style={{
+                height: 40,
+                width: 85,
+                backgroundColor: '#EDDECC',
+                borderRadius: 30,
+                justifyContent: 'center',
+              }}>
+              <Text
                 style={{
-                  height: 85,
-                  paddingTop: 15,
-                  width: 280,
-                  justifyContent: 'center',
+                  fontSize: 20,
+                  color: '#8F8E8E',
+                  textAlign: 'center',
+                  alignSelf: 'center',
                 }}>
-                <Text
-                  style={{fontSize: 16, color: '#8F8E8E', textAlign: 'center'}}>
-                  {this.state.item.desc}
-                </Text>
-              </Row>
-              <Row
-                style={{
-                  height: 40,
-                  width: 85,
-                  backgroundColor: '#EDDECC',
-                  borderRadius: 30,
-                  justifyContent: 'center',
-                }}>
-                <Text
-                  style={{
-                    fontSize: 20,
-                    color: '#8F8E8E',
-                    textAlign: 'center',
-                    alignSelf: 'center',
-                  }}>
-                  {this.state.item.weight}
-                  {this.state.item.measure}
-                </Text>
-              </Row>
-            </Col>
-          </Grid>
-        </Content>
-        <Footer style={styles.footer}>
-          <View style={styles.footerblock}>
-            <View style={styles.priceblock}>
-              <Text style={styles.pricetext}>{this.state.item.price}</Text>
-              <Text style={styles.currencytext}>руб</Text>
-            </View>
-            <View style={styles.addblock}>
-              <Button
-                bordered
-                style={styles.addtocartbtn}
-                onPress={() => {
-                  this.prepareToAddToCart();
-                }}>
-                <View style={styles.addtocartblock}>
-                  <Text style={styles.addtocarttext}>В КОРЗИНУ</Text>
-                  <Icon name="cart" style={styles.addtocarticon} />
-                </View>
-              </Button>
-            </View>
+                {itemState.item.weight}
+                {itemState.item.measure}
+              </Text>
+            </Row>
+          </Col>
+        </Grid>
+      </Content>
+      <Footer style={styles.footer}>
+        <View style={styles.footerblock}>
+          <View style={styles.priceblock}>
+            <Text style={styles.pricetext}>{itemState.item.price}</Text>
+            <Text style={styles.currencytext}>руб</Text>
           </View>
-        </Footer>
-      </Container>
-    );
-  }
-}
-
-const mapStateToProps = (state) => {
-  return {
-    items: state.cart.items,
-  };
+          <View style={styles.addblock}>
+            <Button
+              bordered
+              style={styles.addtocartbtn}
+              onPress={() => {
+                prepareToAddToCart();
+              }}>
+              <View style={styles.addtocartblock}>
+                <Text style={styles.addtocarttext}>В КОРЗИНУ</Text>
+                <Icon name="cart" style={styles.addtocarticon} />
+              </View>
+            </Button>
+          </View>
+        </View>
+      </Footer>
+    </Container>
+  );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addCart: (item) => dispatch(Actions.addCart(item)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ItemScreen);
+export default ItemScreen;
