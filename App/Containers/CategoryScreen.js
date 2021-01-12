@@ -165,7 +165,7 @@ const CategoryScreen = (props) => {
         console.log(err);
       });
     /* eslint-disable-next-line */
-  }, [])
+  }, []);
 
   return (
     <Container style={styles.container}>

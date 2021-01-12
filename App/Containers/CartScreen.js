@@ -74,7 +74,7 @@ const CartScreen = (props) => {
       BackHandler.removeEventListener('hardwareBackPress', backPressed);
     };
     /* eslint-disable-next-line */
-  }, [])
+  }, []);
 
   return (
     <Container>
@@ -134,11 +134,7 @@ const CartScreen = (props) => {
                     </View>
                   </View>
                   <View style={styles.rowButton}>
-                    <View
-                      style={
-                        styles.button0
-                      }
-                    >
+                    <View style={styles.button0}>
                       <Text style={styles.buttontext0}>
                         {item.qty} x {item.price} р
                       </Text>
