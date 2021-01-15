@@ -3,7 +3,7 @@ import {View} from 'react-native';
 import {Text} from 'native-base';
 import styles from '../Containers/Styles/CartScreenStyles';
 
-const CartTotal = (props) => {
+const CartTotal = (props: any) => {
   return (
     <View style={styles.checkoutsummary}>
       <View style={styles.summarycol1}>

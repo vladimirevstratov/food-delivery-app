@@ -3,8 +3,6 @@ import {ApplicationStyles, Metrics} from '../../Themes/';
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
-  //STARTING row action StyleSheet
-  //Тут нужны вообще стили, не??
   rowContent: {
     flex: 1,
     flexDirection: 'row',

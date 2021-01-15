@@ -9,13 +9,13 @@ const NavigationDrawer = DrawerNavigator(
   {
     //Меню: { screen: CategoriesListScreen },
     Меню: {
-      screen: (props) => <CategoryScreen {...props} />,
+      screen: (props: any) => <CategoryScreen {...props} />,
       /*navigationOptions: {
         drawerIcon: () => <Icon name="md-cart" color="#cccccc"/>,
       }*/
     },
-    Корзина: {screen: (props) => <CartScreen {...props} />},
-    Контакты: {screen: (props) => <ContactScreen {...props} />},
+    Корзина: {screen: (props: any) => <CartScreen {...props} />},
+    Контакты: {screen: (props: any) => <ContactScreen {...props} />},
     /*Рестораны: { screen: CartScreen },
 		Акции: { screen: CartScreen },*/
   },

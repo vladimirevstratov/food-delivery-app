@@ -21,14 +21,14 @@ import styles from './Styles/CartScreenStyles';
 import {NavigationActions} from 'react-navigation';
 import {Colors} from '../Themes/';
 
-const CartScreen = (props) => {
-  const [cartState, setCartState] = useState({
+const CartScreen = (props: any) => {
+  const [cartState] = useState({
     damping: 1 - 0.6,
     tension: 300,
   });
 
-  const {items} = useSelector((state) => state.cart);
-  const {skidka} = useSelector((state) => state.settings);
+  const {items} = useSelector((state: any) => state.cart);
+  const {skidka} = useSelector((state: any) => state.settings);
 
   const dispatch = useDispatch();
 
@@ -37,7 +37,7 @@ const CartScreen = (props) => {
     return true;
   };
 
-  const setQty = (index, qty) => {
+  const setQty = (index: any, qty: any) => {
     updateCart(index, qty);
   };
 
@@ -50,18 +50,19 @@ const CartScreen = (props) => {
   };
 
   const clearCart = () => dispatch(Actions.clearCart());
-  const updateCart = (index, qty) => dispatch(Actions.updateCart(index, qty));
+  const updateCart = (index: any, qty: any) =>
+    dispatch(Actions.updateCart(index, qty));
 
   //Начало подсчета итоговых цен
   let subTotal = 0;
 
-  (items || []).map((section, i) => {
+  (items || []).map((section: any /*, i: any*/) => {
     subTotal += parseFloat(section.qty) * parseFloat(section.price);
   });
   console.log(subTotal);
 
   //calculate tax
-  let tax = ((subTotal / 100) * skidka).toFixed(0);
+  let tax: any = ((subTotal / 100) * skidka).toFixed(0);
 
   //Calucalte total
   let TOTAL = subTotal - tax;

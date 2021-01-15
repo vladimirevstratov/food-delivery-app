@@ -3,10 +3,10 @@ import {Platform} from 'react-native';
 import {Text, Button, Badge, Icon} from 'native-base';
 import {Colors} from '../Themes/';
 
-const CartIconHeader = (props) => {
+const CartIconHeader = (props: any) => {
   let itemsQty = 0;
   let itemslimitQty = '99+';
-  (props.items || []).map((section, i) => {
+  (props.items || []).map((section: any /*i: any*/) => {
     itemsQty += parseFloat(section.qty);
   });
 

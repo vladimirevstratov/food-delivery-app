@@ -21,21 +21,21 @@ import CartIconHeader from '../Components/CartIconHeader';
 import styles from './Styles/CategoriesListScreenStyles';
 import {Colors} from '../Themes/';
 
-const CategoriesListScreen = (props) => {
+const CategoriesListScreen = (props: any) => {
   const [state, setState] = useState({
     items: [],
     loading: true,
   });
 
-  const {items} = useSelector((reduxState) => reduxState.cart);
+  const {items} = useSelector((reduxState: any) => reduxState.cart);
 
   const menuref = firebase.firestore().collection('меню');
   const ref = menuref.orderBy('id');
 
-  const listenForItems = (querySnapshot) => {
-    const newItems = [];
+  const listenForItems = (querySnapshot: any) => {
+    const newItems: any = [];
 
-    querySnapshot.forEach((doc) => {
+    querySnapshot.forEach((doc: any) => {
       const item = doc.data();
       const itemref = menuref.doc(doc.id).collection('allitems');
 
@@ -68,7 +68,7 @@ const CategoriesListScreen = (props) => {
     );
   };
 
-  const handlePressCategory = (item) => {
+  const handlePressCategory = (item: any) => {
     props.navigation.navigate('CategoryScreen', {
       name: item.name,
       ref: item.itemref,

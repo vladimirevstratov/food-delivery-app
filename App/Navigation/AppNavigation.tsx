@@ -11,9 +11,9 @@ import styles from './Styles/NavigationStyles';
 const PrimaryNav = StackNavigator(
   {
     NavigationDrawer: {screen: NavigationDrawer},
-    CartScreen: {screen: (props) => <CartScreen {...props} />},
-    ItemScreen: {screen: (props) => <ItemScreen {...props} />},
-    CheckoutScreen: {screen: (props) => <CheckoutScreen {...props} />},
+    CartScreen: {screen: (props: any) => <CartScreen {...props} />},
+    ItemScreen: {screen: (props: any) => <ItemScreen {...props} />},
+    CheckoutScreen: {screen: (props: any) => <CheckoutScreen {...props} />},
   },
   {
     // Default config for all screens

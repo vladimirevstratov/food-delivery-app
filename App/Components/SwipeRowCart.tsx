@@ -13,18 +13,18 @@ import {Colors} from '../Themes/';
 const InteractableIcon = Animated.createAnimatedComponent(Icon);
 const InteractableText = Animated.createAnimatedComponent(Text);
 
-const SwipeRowCart = (props) => {
+const SwipeRowCart = (props: any) => {
   const [componentState, setComponentState] = useState({
     isMoving: false,
     position: 1,
   });
 
-  const interactableRef = useRef(null);
+  const interactableRef: any = useRef(null);
 
   const deltaX = useRef(new Animated.Value(0)).current;
   const deltaY = useRef(new Animated.Value(0)).current;
 
-  const onSnap = ({nativeEvent}) => {
+  const onSnap = ({nativeEvent}: any) => {
     const {index} = nativeEvent;
     setComponentState({...componentState, position: index});
   };
@@ -39,7 +39,7 @@ const SwipeRowCart = (props) => {
     }
   };
 
-  const onDrag = ({nativeEvent}) => {
+  const onDrag = ({nativeEvent}: any) => {
     const {state} = nativeEvent;
     if (state === 'start') {
       setComponentState({...componentState, isMoving: true});

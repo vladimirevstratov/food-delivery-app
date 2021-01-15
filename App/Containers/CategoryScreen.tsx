@@ -27,7 +27,7 @@ import styles from './Styles/CategoryScreenStyles';
 import {Colors} from '../Themes/';
 import firebase from '@react-native-firebase/database';
 
-const CategoryScreen = (props) => {
+const CategoryScreen = (props: any) => {
   const menuref = firebase().ref('Меню');
   const ref = menuref.orderByChild('id');
   const setref = firebase().ref('Настройки/Общие');
@@ -36,7 +36,7 @@ const CategoryScreen = (props) => {
     items: [],
   });
 
-  const {items} = useSelector((state) => state.cart);
+  const {items} = useSelector((state: any) => state.cart);
 
   const dispatch = useDispatch();
 
@@ -57,7 +57,7 @@ const CategoryScreen = (props) => {
             reject('offline');
           }
         })
-        .catch((error) => {
+        .catch(() => {
           Toast.show({
             text: 'Нет соединения',
             position: 'bottom',
@@ -68,10 +68,10 @@ const CategoryScreen = (props) => {
     });
   };
 
-  const getItems = (querySnapshot) => {
-    const newItems = [];
+  const getItems = (querySnapshot: any) => {
+    const newItems: any = [];
 
-    querySnapshot.forEach((doc) => {
+    querySnapshot.forEach((doc: any) => {
       const item = doc.val();
 
       newItems.push({
@@ -91,7 +91,7 @@ const CategoryScreen = (props) => {
     });
   };
 
-  const getTax = (querySnapshot) => {
+  const getTax = (querySnapshot: any) => {
     const setingsapp = querySnapshot.val();
 
     dispatch(Actions.addSettings(setingsapp.скидка));
@@ -121,7 +121,7 @@ const CategoryScreen = (props) => {
     );
   };
 
-  const prepareToAddToCart = (item) => {
+  const prepareToAddToCart = (item: any) => {
     let newItem = {
       qty: 1,
       id: item.id,
@@ -134,7 +134,7 @@ const CategoryScreen = (props) => {
     dispatch(Actions.addCart(newItem));
   };
 
-  const handlePressItem = (item) => {
+  const handlePressItem = (item: any) => {
     props.navigation.navigate('ItemScreen', {data1: item});
   };
 
@@ -154,7 +154,7 @@ const CategoryScreen = (props) => {
       })
       .then(getTax)
       .then(() => {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
           ref.once('value').then((value) => {
             resolve(value);
           });
