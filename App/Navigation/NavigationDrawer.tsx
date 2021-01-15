@@ -21,7 +21,7 @@ const NavigationDrawer = DrawerNavigator(
   },
   {
     initialRouteName: 'Меню',
-    contentComponent: (props) => <DrawerContent {...props} />,
+    contentComponent: (props: any) => <DrawerContent {...props} />,
   },
 );
 

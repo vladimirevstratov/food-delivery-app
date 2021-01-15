@@ -7,7 +7,7 @@ export const INITIAL_STATE = Immutable({
   skidka: 0,
 });
 
-const addsettings = (state, action) => {
+const addsettings = (state: any, action: any) => {
   console.log('Load Settings');
   let newState = JSON.parse(JSON.stringify(state));
 

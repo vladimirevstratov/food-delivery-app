@@ -5,14 +5,14 @@ import AppNavigation from '../Navigation/AppNavigation';
   return newState || state
 }*/
 
-const getCurrentRouteName = (state) => {
+const getCurrentRouteName = (state: any): any => {
   const route = state.routes[state.index];
   return typeof route.index === 'undefined'
     ? route.routeName
     : getCurrentRouteName(route);
 };
 
-export const reducer = (state, action) => {
+export const reducer = (state: any, action: any) => {
   const nextState = AppNavigation.router.getStateForAction(action, state);
 
   // prevents navigating twice to the same route

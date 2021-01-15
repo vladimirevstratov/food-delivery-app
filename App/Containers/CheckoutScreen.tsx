@@ -25,8 +25,8 @@ import Moment from 'moment';
 import styles from './Styles/CheckoutScreenStyles';
 import {Colors} from '../Themes/';
 
-const CheckoutScreen = (props) => {
-  const {items} = useSelector((state) => state.cart);
+const CheckoutScreen = (props: any) => {
+  const {items} = useSelector((state: any) => state.cart);
 
   const [checkoutState, setCheckoutState] = useState({
     nameClient: '',
@@ -78,7 +78,7 @@ const CheckoutScreen = (props) => {
     const setOrderwithConnectionChecking = () => {
       const disablebtnfunction = () => {
         //Отключение кнопки продолжить
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
           setCheckoutState({...checkoutState, btndisabled: true});
 
           resolve();
@@ -87,7 +87,7 @@ const CheckoutScreen = (props) => {
 
       const checkingisInputsCorrect = () => {
         //Отключение кнопки продолжить
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
           if (
             !checkoutState.namestatussuccess ||
             !checkoutState.phonestatussuccess ||
@@ -143,7 +143,7 @@ const CheckoutScreen = (props) => {
                 reject('offline');
               }
             })
-            .catch((error) => {
+            .catch(() => {
               Toast.show({
                 text: 'Нет соединения',
                 position: 'top',

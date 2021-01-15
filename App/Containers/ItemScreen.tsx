@@ -21,13 +21,13 @@ import {Colors} from '../Themes/';
 import {Col, Row, Grid} from 'react-native-easy-grid';
 import styles from './Styles/ItemScreenStyles';
 
-const ItemScreen = (props) => {
+const ItemScreen = (props: any) => {
   const [itemState] = useState({
     loading: false,
     item: props.navigation.state.params.data1,
   });
 
-  const {items} = useSelector((state) => state.cart);
+  const {items} = useSelector((state: any) => state.cart);
 
   const dispatch = useDispatch();
 

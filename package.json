@@ -11,7 +11,8 @@
     "lint:fix": "node_modules/.bin/eslint \"./App/**/*.{js,ts,tsx,jsx}\" --fix",
     "pretty:fix": "node_modules/.bin/prettier --write \"./App/**/*.{js,ts,tsx,jsx}\"",
     "lint:check": "node_modules/.bin/eslint \"./App/**/*.{js,ts,tsx,jsx}\"",
-    "pretty:check": "node_modules/.bin/prettier --check \"./App/**/*.{js,ts,tsx,jsx}\""
+    "pretty:check": "node_modules/.bin/prettier --check \"./App/**/*.{js,ts,tsx,jsx}\"",
+    "tsc": "tsc --pretty --noEmit"
   },
   "dependencies": {
     "@react-native-firebase/app": "^8.3.0",
@@ -45,6 +46,8 @@
     "@types/react": "^17.0.0",
     "@types/react-native": "^0.63.45",
     "@types/react-test-renderer": "^16.9.4",
+    "@types/react-navigation": "^3.4.0",
+    "@types/react-redux": "^7.1.15",
     "@typescript-eslint/eslint-plugin": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",
     "babel-jest": "^25.1.0",
